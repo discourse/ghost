@@ -1,0 +1,27 @@
+{
+  "name": "Ghost",
+  "component": false,
+  "license_url": "https://github.com/melhosseiny/ghost/blob/master/ghost/LICENSE",
+  "about_url": null,
+  "authors": null,
+  "theme_version": null,
+  "minimum_discourse_version": null,
+  "maximum_discourse_version": null,
+  "assets": {
+  },
+  "color_schemes": {
+    "Ghost": {
+      "primary": "ffffff",
+      "secondary": "000000",
+      "tertiary": "00d0c1",
+      "quaternary": "ff19df",
+      "header_background": "000000",
+      "header_primary": "ffffff",
+      "highlight": "fff5a4",
+      "success": "0ce799",
+      "danger": "d04500",
+      "love": "ff19df"
+    }
+  },
+  "learn_more": "https://meta.discourse.org/t/beginners-guide-to-using-discourse-themes/91966"
+}

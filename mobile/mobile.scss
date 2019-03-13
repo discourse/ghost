@@ -1,0 +1,298 @@
+// base
+// base:discourse
+.mobile-view .mobile-nav {
+  background: rgba(0,0,0,0.5);
+  width: 50%;
+  &.messages-nav,
+  &.notifications-nav,
+  &.preferences-nav,
+  &.activity-nav {
+    top: -40px;
+    height: 40px;
+  }
+  .drop.expanded {
+    border: 0;
+  }
+}
+
+// base:alert
+.alert.alert-info {
+  margin-bottom: 8px;
+}
+
+// base:group(s)
+@media screen and (max-width: 550px) {
+  .groups-table tr {
+    padding: 8px;
+  }
+}
+
+.group-members .group-member {
+  border: 0;
+}
+
+// base:user
+.user-main {
+  margin-bottom: 10px;
+}
+
+.user-main .about {
+  background: transparent;
+  .secondary dl {
+    padding: 8px;
+  }
+}
+
+.user-navigation {
+  background-color: rgba(0,0,0,0);
+
+}
+
+.user-table {
+  .wrapper {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.user-badges-list {
+  padding: 8px;
+}
+
+// base:compose
+#reply-control .submit-panel .save-or-cancel .cancel {
+  color: #fff;
+}
+
+// base:topic-list
+.topic-list {
+  margin-left: 0;
+  .topic-list-item {
+    -webkit-box-align: start;
+    -webkit-align-items: start;
+            align-items: start;
+    padding: 8px;
+    img.avatar {
+      margin-right: 8px;
+    }
+    .main-link {
+      line-height: 1.5;
+    }
+    .posts-map {
+      font-size: 1em;
+    }
+    .num.posts a {
+      font-weight: 400;
+    }
+  }
+  .topic-excerpt {
+    width: auto;
+  }
+}
+
+tr.category-topic-link {
+  margin-top: 8px;
+  border-bottom: 0;
+}
+
+.list-controls {
+  margin: 0;
+  .nav-pills {
+    margin-left: 0;
+  }
+}
+
+// base:topic-post
+.topic-post {
+  article {
+    border: 0;
+    padding: 0;
+  }
+
+  .regular > .cooked {
+    img:not(.thumbnail) {
+      max-width: 100%;
+    }
+  }
+}
+
+.topic-body {
+  padding: 8px;
+}
+
+// base: categories-only
+.categories-list {
+  .category-list {
+    margin-left: 0;
+    li {
+      -webkit-box-flex: 0;
+      -webkit-flex: 0 1 100%;
+              flex: 0 1 100%;
+      margin-right: 0;
+    }
+    footer {
+      margin-top: 8px;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: row;
+              flex-direction: row;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+              justify-content: space-between;
+      figure {
+        margin: 0;
+      }
+      figcaption {
+        display: inline;
+      }
+    }
+  }
+}
+
+// base:directory
+.directory .user {
+  border: 0;
+}
+
+// base:search
+.search-container {
+  .search-advanced-sidebar {
+    .search-advanced-title {
+      &.btn {
+        background: transparent;
+        border-radius: 0;
+      }
+    }
+  }
+}
+
+// components
+// component: navs
+.nav-pills > li.navigation-toggle {
+  color: #fff;
+  background-color: $tertiary;
+  border: 0;
+  border-radius: 4px;
+  box-shadow: 0 0 25px -3px $tertiary;
+}
+
+.list-controls .nav-pills .drop {
+  border: 0;
+}
+
+// component: user-stream
+.user-right {
+  >.user-stream {
+    >.alert:first-child {
+      margin-top: 0;
+    }
+  }
+}
+
+.user-right {
+  margin: 8px;
+}
+
+.paginated-topics-list {
+  margin-top: 0;
+}
+
+.user-stream {
+  .item, .user-stream-item {
+    padding: 8px;
+  }
+}
+
+// admin
+// admin:dashboard_next
+.dashboard-next-reports {
+  .reports-list {
+    .report {
+      -webkit-box-flex: 0;
+      -webkit-flex: 0 1 100%;
+              flex: 0 1 100%;
+      margin-right: 0;
+    }
+    .report:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// admin:badges
+.admin-badges .form-horizontal textarea {
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+  max-width: 100%;
+}
+
+// admin:emails
+.email-preview-digest .controls {
+  margin-left: 0;
+}
+
+.admin-controls.email-preview .controls {
+  padding: 0;
+}
+
+// admin:customize
+.admin-customize .show-current-style {
+  padding-left: 8px;
+  padding-right: 8px;
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+}
+
+// admin: admin_base
+.admin-main-nav:before, .admin-controls nav:before {
+  content: "";
+  background: hsla(230, 32%, 26%, 1);
+  width: 10px;
+}
+
+.admin-main-nav:after, .admin-controls nav:after {
+  content: "";
+  background: #1a1e32;
+  width: 10px;
+}
+
+.admin-site-settings,
+.admin-plugins,
+.admin-watched-words {
+  overflow: hidden;
+  .admin-detail {
+    margin-left: 0;
+    padding-right: 10px;
+    -moz-box-sizing: border-box;
+         box-sizing: border-box;
+  }
+}
+
+.admin-controls .controls {
+  margin-left: 0;
+}
+.admin-controls .nav-pills {
+  margin-left: 0;
+}
+.admin-nav {
+  display: none;
+  padding-left: 10px;
+}
+.admin-nav.mobile-open {
+  display: block;
+}
+.admin-detail {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+.admin-detail.mobile-open {
+  margin-left: 10px;
+}

@@ -1,0 +1,144 @@
+// color
+$bios: #1d3bf0;
+
+// base:group(s)
+.group {
+  .user-table {
+    .wrapper {
+      -webkit-flex-wrap: wrap;
+              flex-wrap: wrap;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+              justify-content: center;
+      .group-members-actions + div {
+        -webkit-box-flex: 100%;
+        -webkit-flex: 100%;
+                flex: 100%;
+      }
+    }
+  }
+}
+
+// base:user
+.user-navigation {
+  background-color: rgba(0,0,0,0.25);
+}
+
+.user-table {
+  .wrapper {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
+// base:compose
+.fullscreen-composer #reply-control {
+  &.fullscreen {
+    &:before {
+      background: $bios;
+    }
+  }
+}
+
+.composer-popup {
+  background: $bios;
+}
+
+// base:topic
+#topic-title .edit-topic-title {
+  max-width: 774px;
+}
+
+.private-message-glyph {
+  color: $primary;
+}
+
+.post-actions {
+  margin-right: 8px;
+  .trigger-user-card {
+    margin-right: 4px;
+  }
+}
+
+// base:topic-post
+.topic-post {
+  margin-bottom: 8px;
+  article {
+    .row {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: row;
+              flex-direction: row;
+    }
+  }
+}
+
+.topic-avatar, .topic-body {
+  background-color: rgba(0,0,0,1);
+  border-top: 0 none;
+  border-bottom: 1px solid $bios;
+}
+
+.topic-avatar {
+  padding-top: 8px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.topic-body {
+  padding-top: 8px;
+  .topic-meta-data { padding-left: 0; }
+  .who-liked {
+    width: auto;
+    margin-right: 8px;
+  }
+}
+
+// base: categories-only
+.category-list {
+  li {
+    -moz-box-sizing: border-box;
+         box-sizing: border-box;
+    width: calc(33.33% - 8px);
+  }
+}
+
+// admin:dashboard_next
+.dashboard-next {
+  &.admin-contents {
+    padding: 8px;
+    margin-top: 0;
+  }
+  .section .section-title, .section-title {
+    border: 0;
+  }
+  .navigation {
+    border: 0;
+    .navigation-item:hover {
+      background-color: rgba(0,0,0,0.25);
+    }
+  }
+}
+
+// admin
+// admin:dashboard_next
+.dashboard-next-reports {
+  .reports-list {
+    .report {
+      -moz-box-sizing: border-box;
+           box-sizing: border-box;
+      width: calc(33.33% - 8px);
+    }
+    .report:nth-child(3n) {
+      margin-right: 0;
+    }
+  }
+}

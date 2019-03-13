@@ -1,0 +1,367 @@
+<!-- Remove topic list header -->
+<script type='text/x-handlebars' data-template-name='topic-list-header.raw'></script>
+
+<!--  Restructure topic list item  -->
+<script type='text/x-handlebars' data-template-name='components/topic-list'>
+  {{plugin-outlet
+    name="before-topic-list-body"
+    args=(hash
+      topics=topics
+      selected=selected
+      bulkSelectEnabled=bulkSelectEnabled
+      lastVisitedTopic=lastVisitedTopic
+      discoveryList=discoveryList
+      hideCategory=hideCategory)
+    tagName=""
+    connectorTagName=""}}
+
+  {{#each filteredTopics as |topic|}}
+    {{topic-list-item topic=topic
+                      bulkSelectEnabled=bulkSelectEnabled
+                      showTopicPostBadges=showTopicPostBadges
+                      hideCategory=hideCategory
+                      showPosters=showPosters
+                      showLikes=showLikes
+                      showOpLikes=showOpLikes
+                      expandGloballyPinned=expandGloballyPinned
+                      expandAllPinned=expandAllPinned
+                      lastVisitedTopic=lastVisitedTopic
+                      selected=selected
+                      tagsForUser=tagsForUser}}
+    {{raw "list/visited-line" lastVisitedTopic=lastVisitedTopic topic=topic}}
+  {{/each}}
+</script>
+
+<script type='text/x-handlebars' data-template-name='list/topic-list-item.raw'>
+  {{#if bulkSelectEnabled}}
+    <td class="bulk-select">
+      <input type="checkbox" class="bulk-select">
+    </td>
+  {{/if}}
+
+  {{!--
+    The `~` syntax strip spaces between the elements, making it produce
+    `<a class=topic-post-badges>Some text</a><span class=topic-post-badges>`,
+    with no space between them.
+    This causes the topic-post-badge to be considered the same word as "text"
+    at the end of the link, preventing it from line wrapping onto its own line.
+  --}}
+  <span class="main-link">
+    <span class='link-top-line'>
+      {{~raw-plugin-outlet name="topic-list-before-status"}}
+      {{~raw "topic-status" topic=topic}}
+      {{~topic-link topic class="raw-link raw-topic-link"}}
+      {{~#if topic.featured_link}}
+      {{~topic-featured-link topic}}
+      {{~/if}}
+      {{~raw-plugin-outlet name="topic-list-after-title"}}
+      {{~#if showTopicPostBadges}}
+      {{~raw "topic-post-badges" unread=topic.unread newPosts=topic.displayNewPosts unseen=topic.unseen url=topic.lastUnreadUrl newDotText=newDotText}}
+      {{~/if}}
+    </span>
+    <span class="link-bottom-line">
+      {{#unless hideCategory}}
+        {{#unless topic.isPinnedUncategorized}}
+          {{category-link topic.category}}
+        {{/unless}}
+      {{/unless}}
+      {{raw "list/activity-column" topic=topic class="num" tagName="span"}}
+      {{raw "list/posts-count-column" topic=topic}}
+      <span class="num views {{topic.viewsHeat}}">
+        {{d-icon "far-eye"}}
+        {{number topic.views numberKey="views_long"}}
+      </span>
+      {{discourse-tags topic mode="list" tagsForUser=tagsForUser}}
+      {{raw "list/action-list" topic=topic postNumbers=topic.liked_post_numbers className="likes" icon="heart"}}
+    </span>
+    {{#if expandPinned}}
+      {{raw "list/topic-excerpt" topic=topic}}
+    {{/if}}
+  </span>
+  <span class="fill"></span>
+  <span class="secondary">
+    {{#if showPosters}}
+      {{raw "list/posters-column" posters=topic.featuredUsers}}
+    {{/if}}
+  </span>
+</script>
+
+<script type='text/x-handlebars' data-template-name='list/posts-count-column.raw'>
+  <{{view.tagName}} class='num posts-map posts {{view.likesHeat}}' title='{{view.title}}'>
+    <a href class='num posts-map badge-posts {{view.likesHeat}}'>
+      {{d-icon "far-comment"}}
+      {{raw-plugin-outlet name="topic-list-before-reply-count"}}
+      {{number topic.replyCount noTitle="true"}}
+    </a>
+  </{{view.tagName}}>
+</script>
+
+<script type='text/x-handlebars' data-template-name='list/posters-column.raw'>
+  {{#each posters as |poster|}}
+    <a href="{{poster.user.path}}" data-user-card="{{poster.user.username}}" class="{{poster.extraClasses}}">{{avatar poster avatarTemplatePath="user.avatar_template" usernamePath="user.username" namePath="user.name" imageSize="small"}}</a>
+  {{/each}}
+</script>
+
+<script type='text/x-handlebars' data-template-name='list/visited-line.raw'>
+  {{#if view.isLastVisited}}
+    <hr class='topic-list-item-separator' data-message="{{i18n 'topics.new_messages_marker'}}"></hr>
+  {{/if}}
+</script>
+
+<!-- Restructure category list item -->
+<script  type='text/x-handlebars' data-template-name='components/categories-only'>
+  {{#if categories}}
+    <ul class="category-list {{if showTopics 'with-topics'}}" aria-labelledby="categories-only-category">
+      {{#each categories as |c|}}
+        <li data-category-id={{c.id}} class="{{if c.description_excerpt 'has-description' 'no-description'}} {{if c.uploaded_logo.url 'has-logo' 'no-logo'}}">
+          <span class="category-color" style="background-color: #{{c.color}}"></span>
+          <span class="category">
+            {{category-title-link category=c}}
+            <div class="category-description">
+              {{{dir-span c.description_excerpt}}}
+            </div>
+            {{#if c.subcategories}}
+              <div class='subcategories'>
+                {{#each c.subcategories as |s|}}
+                  <span class='subcategory'>
+                    {{category-title-before category=s}}
+                    {{category-link s hideParent="true"}}
+                    {{category-unread category=s}}
+                  </span>
+                {{/each}}
+              </div>
+            {{/if}}
+          </span>
+          <span class="topics">
+            <div title={{c.statTitle}}>{{{c.stat}}}</div>
+            {{category-unread category=c tagName="div" class="unread-new"}}
+          </span>
+          {{#if showTopics}}
+            <span class="latest">
+              {{#each c.featuredTopics as |t|}}
+                {{featured-topic topic=t latestTopicOnly=latestTopicOnly}}
+              {{/each}}
+            </span>
+          {{/if}}
+        </li>
+      {{/each}}
+    </ul>
+  {{/if}}
+</script>
+
+<!-- Restructure full page search -->
+<script type='text/x-handlebars' data-template-name='full-page-search'>
+  {{#d-section pageClass="search" class="search-container"}}
+    {{scroll-tracker name="full-page-search" tag=searchTerm class="hidden"}}
+
+    <div class="search-advanced">
+      {{#unless site.mobileView}}
+        <div class="search-bar">
+          {{search-text-field value=searchTerm class="full-page-search search no-blur search-query" enter=(action "search") hasAutofocus=hasAutofocus}}
+          {{d-button action=(action "search") icon="search" class="btn-primary search-cta" disabled=searching}}
+        </div>
+      {{/unless}}
+
+      <div class="search-notice">
+        {{#if invalidSearch}}
+          <div class="fps-invalid">
+            {{i18n "search.too_short"}}
+          </div>
+        {{/if}}
+      </div>
+
+      <div class="search-context">
+        {{#if context}}
+          <div class='fps-search-context'>
+            <label>
+              {{input type="checkbox" name="searchContext" checked=searchContextEnabled}} {{searchContextDescription}}
+            </label>
+          </div>
+        {{/if}}
+      </div>
+
+      {{#if hasResults}}
+        <div class='search-title'>
+          {{#if hasResults}}
+            {{create-topic-button canCreateTopic=canCreateTopic action=(action "createTopic" searchTerm)}}
+          {{/if}}
+
+          {{#if canBulkSelect}}
+            {{d-button icon="list" class="btn-default bulk-select" title="topics.bulk.toggle" action=(action "toggleBulkSelect")}}
+            {{bulk-select-button selected=selected action=(action "search")}}
+          {{/if}}
+
+          {{#if bulkSelectEnabled}}
+            <div class='fps-select'>
+              <a {{action "selectAll"}}>{{i18n "search.select_all"}}</a>
+              <a {{action "clearAll"}}>{{i18n "search.clear_all"}}</a>
+            </div>
+          {{/if}}
+        </div>
+
+        <div class='search-info'>
+          <div class='result-count'>
+            {{{resultCountLabel}}}
+          </div>
+          <div class='sort-by'>
+            <span class='desc'>
+              {{i18n "search.sort_by"}}
+            </span>
+            {{combo-box value=sortOrder content=sortOrders castInteger=true}}
+          </div>
+        </div>
+      {{/if}}
+
+     {{plugin-outlet name="full-page-search-below-search-info" args=(hash search=searchTerm)}}
+
+      <div class="search-results">
+        {{#load-more selector=".fps-result" action=(action "loadMore")}}
+          {{#each model.posts as |result|}}
+            <div class='fps-result'>
+              <div class='author'>
+                <a href={{result.userPath}} data-user-card="{{unbound result.username}}">
+                  {{avatar result imageSize="large"}}
+                </a>
+              </div>
+
+              <div class='fps-topic'>
+                <div class='topic'>
+                  {{#if bulkSelectEnabled}}
+                    {{track-selected selectedList=selected selectedId=result.topic}}
+                  {{/if}}
+
+                  <a class='search-link' href='{{unbound result.url}}' {{action "logClick" result.topic_id}}>
+                    {{topic-status topic=result.topic disableActions=true}}<span class='topic-title'>{{#highlight-text highlight=q}}{{{unbound result.topic.fancyTitle}}}{{/highlight-text}}</span>
+                  </a>
+
+                  <div class="search-meta">
+                    <span class='search-category'>
+                      {{#if result.topic.category.parentCategory}}
+                      {{category-link result.topic.category.parentCategory}}
+                      {{/if}}
+                      {{category-link result.topic.category hideParent=true}}
+                      {{#each result.topic.tags as |tag|}}
+                        {{discourse-tag tag isPrivateMessage=isPrivateMessage}}
+                      {{/each}}
+                    </span>
+                    <span class='date'>
+                      {{format-age result.created_at}}
+                    </span>
+                    {{#if showLikeCount}}
+                      {{#if result.like_count}}
+                        <span class='like-count'>
+                          {{result.like_count}} {{d-icon "heart"}}
+                        </span>
+                      {{/if}}
+                    {{/if}}
+                    {{plugin-outlet name="full-page-search-category" args=(hash result=result)}}
+                  </div>
+                </div>
+
+                <div class='blurb container'>
+                  {{#if result.blurb}}
+                    {{#highlight-text highlight=highlightQuery}}
+                      {{{unbound result.blurb}}}
+                    {{/highlight-text}}
+                  {{/if}}
+                </div>
+              </div>
+            </div>
+          {{/each}}
+
+          {{#conditional-loading-spinner condition=loading }}
+            {{#unless hasResults}}
+              {{#if searchActive}}
+                <h3>{{i18n "search.no_results"}}</h3>
+
+                {{#if showSuggestion}}
+                  <div class="no-results-suggestion">
+                    {{i18n "search.cant_find"}}
+                    {{#if canCreateTopic}}
+                      <a href {{action "createTopic" searchTerm}}>{{i18n "search.start_new_topic"}}</a>
+                      {{#unless siteSettings.login_required}}
+                        {{i18n "search.or_search_google"}}
+                      {{/unless}}
+                    {{else}}
+                      {{i18n "search.search_google"}}
+                    {{/if}}
+                  </div>
+
+                  {{google-search searchTerm=searchTerm}}
+                {{/if}}
+              {{/if}}
+            {{/unless}}
+
+            {{#if hasResults}}
+              {{#unless loading}}
+                <h3 class="search-footer">
+                  {{#if model.grouped_search_result.more_full_page_results}}
+                    {{#if isLastPage }}
+                      {{i18n "search.more_results"}}
+                    {{/if}}
+                  {{else}}
+                    {{i18n "search.no_more_results"}}
+                  {{/if}}
+                </h3>
+              {{/unless}}
+            {{/if}}
+          {{/conditional-loading-spinner}}
+        {{/load-more}}
+      </div>
+    </div>
+
+    <div class="search-advanced-sidebar">
+      {{#if site.mobileView}}
+        <div class="search-bar">
+          {{search-text-field value=searchTerm class="full-page-search search no-blur search-query" enter=(action "search") hasAutofocus=hasAutofocus}}
+          {{d-button action=(action "search") icon="search" class="btn-primary search-cta" disabled=searching}}
+        </div>
+      {{/if}}
+
+      {{#if site.mobileView}}
+        <button class="search-advanced-title btn" {{action "toggleAdvancedSearch"}}>
+          {{{searchAdvancedIcon}}} {{i18n "search.advanced.title"}}
+        </button>
+      {{else}}
+        <span class="search-advanced-title">
+          {{i18n "search.advanced.title"}}
+        </span>
+      {{/if}}
+
+      {{#if site.mobileView}}
+        {{#if expanded}}
+          <div class="search-advanced-filters">
+            {{search-advanced-options searchTerm=searchTerm isExpanded=expanded}}
+          </div>
+        {{/if}}
+      {{else}}
+        <div class="search-advanced-filters">
+          {{search-advanced-options searchTerm=searchTerm isExpanded=true}}
+
+          {{d-button
+            label="submit"
+            action=(action "search")
+            icon="search"
+            class="btn-primary search-cta"
+            disabled=searching}}
+        </div>
+      {{/if}}
+    </div>
+  {{/d-section}}
+</script>
+
+<script type="text/discourse-plugin" version="0.8">
+  var topicList = require('discourse/components/topic-list').default;
+
+  topicList.reopen({
+    tagName: 'ul'
+  });
+</script>
+
+<script type="text/discourse-plugin" version="0.8">
+  var topicListItem = require('discourse/components/topic-list-item').default;
+
+  topicListItem.reopen({
+    tagName: 'li'
+  });
+</script>
