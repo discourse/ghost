@@ -65,7 +65,7 @@
           {{category-link topic.category}}
         {{/unless}}
       {{/unless}}
-      {{raw "list/activity-column" topic=topic class="num" tagName="span"}}
+      {{raw "list/activity-column" topic=topic class="num" tagName="a"}}
       {{raw "list/posts-count-column" topic=topic}}
       <span class="num views {{topic.viewsHeat}}">
         {{d-icon "far-eye"}}
@@ -86,8 +86,15 @@
   </span>
 </script>
 
+<script type='text/x-handlebars' data-template-name='list/activity-column.raw'>
+  <{{tagName}} class="{{class}} {{cold-age-class topic.createdAt startDate=topic.bumpedAt class=""}} activity post-activity" href="{{topic.lastPostUrl}}" title="{{{topic.bumpedAtTitle}}}">
+    {{~raw-plugin-outlet name="topic-list-before-relative-date"~}}
+    {{~format-date topic.bumpedAt format="tiny" noTitle="true"~}}
+  </{{tagName}}>
+</script>
+
 <script type='text/x-handlebars' data-template-name='list/posts-count-column.raw'>
-  <{{view.tagName}} class='num posts-map posts {{view.likesHeat}}' title='{{view.title}}'>
+  <{{view.tagName}} class='posts-map posts {{view.likesHeat}}' title='{{view.title}}'>
     <a href class='num posts-map badge-posts {{view.likesHeat}}'>
       {{d-icon "far-comment"}}
       {{raw-plugin-outlet name="topic-list-before-reply-count"}}
