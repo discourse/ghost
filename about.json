@@ -3,7 +3,7 @@
   "component": false,
   "license_url": "https://github.com/melhosseiny/ghost/blob/master/ghost/LICENSE",
   "about_url": null,
-  "authors": null,
+  "authors": "https://github.com/melhosseiny",
   "theme_version": null,
   "minimum_discourse_version": null,
   "maximum_discourse_version": null,
