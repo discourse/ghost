@@ -708,6 +708,10 @@ aside.quote .title {
 	100% { background-color: rgba(33,36,36,1); }
 }
 
+.show-more.has-topics {
+  position: static;
+}
+
 .topic-list {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1019,6 +1023,19 @@ aside.onebox {
       width: 4px;
       height: 8px;
     }
+  }
+}
+
+.badge-notification {
+  padding: 0;
+  &.new-posts, &.unread {
+    background-color: transparent;
+  }
+  &.new-posts {
+    color: $tertiary;
+  }
+  &.unread {
+    color: $highlight;
   }
 }
 
