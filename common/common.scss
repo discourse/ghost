@@ -202,9 +202,11 @@ blockquote {
 .d-header {
   background: $background;
   box-shadow: none;
-  .logo-big, #site-logo {
-    -webkit-filter: invert(1);
-            filter: invert(1);
+  @if $invert-logo == "true" {
+    .logo-big, #site-logo {
+      -webkit-filter: invert(1);
+              filter: invert(1);
+    }
   }
   .d-header-icons {
     .icon {
