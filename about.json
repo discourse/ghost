@@ -4,7 +4,7 @@
   "license_url": "https://github.com/melhosseiny/ghost/blob/master/ghost/LICENSE",
   "about_url": "https://meta.discourse.org/t/ghost-a-cyberpunk-theme-for-discourse/111806?u=melhosseiny",
   "authors": "https://github.com/melhosseiny",
-  "theme_version": "0.0.1",
+  "theme_version": "0.0.2",
   "minimum_discourse_version": null,
   "maximum_discourse_version": null,
   "assets": {
@@ -15,7 +15,7 @@
       "secondary": "000000",
       "tertiary": "00d0c1",
       "quaternary": "ff19df",
-      "header_background": "000000",
+      "header_background": "262c4a",
       "header_primary": "ffffff",
       "highlight": "fdee06",
       "success": "0ce799",

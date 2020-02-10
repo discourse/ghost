@@ -2,14 +2,6 @@
 // base:discourse
 .mobile-view .mobile-nav {
   background: rgba(0,0,0,0.5);
-  width: 50%;
-  &.messages-nav,
-  &.notifications-nav,
-  &.preferences-nav,
-  &.activity-nav {
-    top: -40px;
-    height: 40px;
-  }
   .drop.expanded {
     border: 0;
   }
