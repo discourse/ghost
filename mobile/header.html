@@ -1,6 +1,6 @@
 <script type='text/x-handlebars' data-template-name='mobile/list/topic-list-item.raw'>
   {{~#unless expandPinned}}
-  <a href="{{topic.lastPostUrl}}">{{avatar topic.lastPoster imageSize="large"}}</a>
+  <a href="{{topic.lastPostUrl}}" data-user-card="{{topic.last_poster_username}}">{{avatar topic.lastPosterUser imageSize="large"}}</a>
   {{/unless~}}
   <div class='main-link'>
     <div class="link-top-line">
