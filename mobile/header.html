@@ -1,6 +1,6 @@
 <script type='text/x-handlebars' data-template-name='mobile/list/topic-list-item.raw'>
   {{~#unless expandPinned}}
-  <a href="{{topic.lastPostUrl}}">{{avatar topic.lastPoster usernamePath="username" imageSize="large"}}</a>
+  <a href="{{topic.lastPostUrl}}">{{avatar topic.lastPoster imageSize="large"}}</a>
   {{/unless~}}
   <div class='main-link'>
     <div class="link-top-line">
@@ -46,7 +46,7 @@
       <ul class="topic-list">
         {{#each topics as |t|}}
           <li class="topic-list-item {{if t.archived 'archived'}} {{if t.visited 'visited'}}" data-topic-id={{t.id}}>
-            <a href="{{t.lastPostUrl}}" title='{{i18n 'last_post'}}: {{{raw-date t.bumped_at}}}'>{{avatar t.lastPoster usernamePath="username" imageSize="large"}}</a>
+            <a href="{{t.lastPostUrl}}" title='{{i18n 'last_post'}}: {{{raw-date t.bumped_at}}}'>{{avatar t.lastPoster imageSize="large"}}</a>
             <div class='main-link'>
               <div class='link-top-line'>
                 {{topic-status topic=t}}
