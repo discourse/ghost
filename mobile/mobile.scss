@@ -1,10 +1,16 @@
 // base
 // base:discourse
 .mobile-view .mobile-nav {
+  border: 0;
   background: rgba(0,0,0,0.5);
   .drop.expanded {
     border: 0;
   }
+}
+
+// base:menu-panel
+.user-menu .quick-access-profile li:not(.show-all) {
+  border: 0;
 }
 
 // base:alert
@@ -77,6 +83,8 @@
     }
     .posts-map {
       font-size: 1em;
+      display: -webkit-box;
+      display: -webkit-flex;
       display: flex;
     }
     .num.posts a {
@@ -118,7 +126,7 @@ tr.category-topic-link {
   padding: 8px;
 }
 
-// base: categories-only
+// base: category-list
 .categories-list {
   .category-list {
     margin-left: 0;

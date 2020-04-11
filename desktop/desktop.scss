@@ -118,13 +118,33 @@ $bios: #1d3bf0;
   margin-right: 8px;
 }
 
-// base: categories-only
+// base:category-list
 .category-list {
   li {
     -moz-box-sizing: border-box;
          box-sizing: border-box;
-    width: calc(33.33% - 8px);
+    width: calc(33.33% - (8px/3)*2);
   }
+}
+
+.categories-and-latest, .categories-and-top {
+  .category-list {
+    li {
+      width: auto;
+    }
+  }
+}
+
+.category-boxes, .category-boxes-with-topics {
+  .category-box {
+    width: calc(33.33% - (8px/3)*2);
+  }
+}
+
+// base:login
+.d-modal.create-account .login-form::before,
+.d-modal.create-account .login-form::after {
+  content:none;
 }
 
 // admin:dashboard_next

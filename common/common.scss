@@ -61,16 +61,23 @@ mark, span.highlighted {
 }
 
 // kbd
-#keyboard-shortcuts-help ul b, kbd {
-  font-family: "Overpass Mono";
+#keyboard-shortcuts-help ul span {
+  background-color: transparent;
+}
+
+kbd {
   font-style: normal;
-  padding: 0 4px;
-  color: black;
   background: #EEE;
   border-width: 1px 3px 3px 1px;
   border-style: solid;
   border-color: #CCC #AAA #888 #BBB;
   box-shadow: none;
+}
+
+#keyboard-shortcuts-help ul kbd, kbd {
+  font-family: "Overpass Mono";
+  padding: 0 4px;
+  color: black;
 }
 
 .latest .featured-topic {
@@ -132,6 +139,7 @@ div.ac-wrap,
 }
 
 .d-editor-button-bar {
+  border-bottom: 0;
   .btn,
   .btn-default,
   .btn.btn-icon {
@@ -229,41 +237,53 @@ blockquote {
     border: 0;
     background-image: $separator;
   }
-  div.menu-links-header .fa,
-  div.menu-links-header a {
-    color: $tertiary;
-  }
-  div.menu-links-header .widget-link:hover .fa {
-    color: $secondary;
-  }
-  .badge-wrapper {
-    .badge-category {
-      .category-name {
-        color: $tertiary;
-      }
-    }
-  }
 }
 
-.user-menu .notifications .show-all .btn {
+.user-menu .quick-access-panel .show-all a {
   background-color: $tertiary-low;
-  border-radius: 0;
+  .d-icon { color: $tertiary; }
   &:hover {
     background-color: $highlight;
     .d-icon { color: $secondary; }
   }
-  .d-icon { color: $primary; }
 }
 
-.user-menu .notifications li:hover,
+.user-menu .quick-access-panel li:hover,
 .menu-panel li a:hover,
 .menu-panel li a:focus,
-.menu-panel li.heading a:hover,
-.menu-panel li.heading a:focus {
+.menu-panel li a.widget-link:hover,
+.menu-panel li a.widget-link:focus,
+.menu-panel li.heading a.widget-link:hover,
+.menu-panel li.heading a.widget-link:focus {
   background-color: $highlight;
   color: rgba(0,0,0,0.8);
   span {
     color: $secondary;
+  }
+}
+
+div.menu-links-header {
+  .menu-links-row {
+    border-color: $tertiary;
+    li {
+      a {
+        color: $tertiary;
+        .fa {
+          color: $tertiary;
+        }
+        &.active {
+          border-color: $tertiary;
+          &:hover .fa, span.d-label {
+            color: $tertiary;
+          }
+        }
+        &:hover {
+          .fa {
+            color: $secondary;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -310,14 +330,19 @@ blockquote {
 // base:alert
 .alert.alert-info {
   background-color: $tertiary-alt;
-  a {
+  &.clickable, a, button {
     color: $primary;
+  }
+  a, .btn-link.btn-text {
     text-decoration: underline;
   }
   .close {
     opacity: 0.4;
     &:hover {
       opacity: 0.6;
+    }
+    .d-icon {
+      color: $primary;
     }
   }
 }
@@ -330,6 +355,12 @@ blockquote {
 }
 
 // base:group(s)
+.groups-boxes {
+  .group-box {
+    background-color: $secondary;
+    border: 0;
+  }
+}
 .groups-table {
   background-color: $user-background;
 }
@@ -360,6 +391,27 @@ table.group-members {
 }
 
 // base:user
+.user-content-wrapper {
+  background: $user-background;
+  .user-secondary-navigation {
+    .btn {
+      margin-left: 8px;
+    }
+  }
+  .user-additional-controls {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+}
+
+.user-content {
+  background-color: transparent;
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
 .user-right {
   -webkit-box-flex: 1;
   -webkit-flex: 1;
@@ -381,10 +433,10 @@ table.group-members {
     }
   }
   .user-content {
+    background: transparent;
     -webkit-box-flex: 1;
     -webkit-flex: 1;
             flex: 1;
-    background: transparent;
     .admin-controls {
       background: transparent;
       nav {
@@ -446,7 +498,6 @@ table.group-members {
   -webkit-box-flex: 1;
   -webkit-flex: 1;
           flex: 1;
-  padding: 0;
   .uploaded-image-preview {
     background: #000;
   }
@@ -770,10 +821,14 @@ aside.quote .title {
 
     &:hover {
       background-color: rgba(33,36,36,1);
-    	animation-name: fade-in-rgba;
-    	animation-iteration-count: 1;
-    	animation-timing-function: ease-in;
-    	animation-duration: 100ms;
+    	-webkit-animation-name: fade-in-rgba;
+    	        animation-name: fade-in-rgba;
+    	-webkit-animation-iteration-count: 1;
+    	        animation-iteration-count: 1;
+    	-webkit-animation-timing-function: ease-in;
+    	        animation-timing-function: ease-in;
+    	-webkit-animation-duration: 100ms;
+    	        animation-duration: 100ms;
     }
 
     .main-link {
@@ -789,6 +844,8 @@ aside.quote .title {
         color: #5f6368;
         line-height: 1;
         .num {
+          display: -webkit-box;
+          display: -webkit-flex;
           display: flex;
           width: auto;
           margin-right: 8px;
@@ -832,7 +889,7 @@ div.education {
   color: rgba(255,255,255,0.8);
 }
 
-// base: categories-only
+// base: category-list
 .category-list {
   display: -webkit-box;
   display: -webkit-flex;
@@ -881,10 +938,14 @@ div.education {
 
     &:hover {
       background-color: rgba(33,36,36,1);
-    	animation-name: fade-in-rgba;
-    	animation-iteration-count: 1;
-    	animation-timing-function: ease-in;
-    	animation-duration: 100ms;
+    	-webkit-animation-name: fade-in-rgba;
+    	        animation-name: fade-in-rgba;
+    	-webkit-animation-iteration-count: 1;
+    	        animation-iteration-count: 1;
+    	-webkit-animation-timing-function: ease-in;
+    	        animation-timing-function: ease-in;
+    	-webkit-animation-duration: 100ms;
+    	        animation-duration: 100ms;
     }
     .category-color {
       display: inline-block;
@@ -902,12 +963,9 @@ div.education {
         color: $tertiary;
       }
     }
-  }
-  li:nth-child(3n) {
-    margin-right: 0;
-  }
-  .category-box, .category-box-inner {
-    border: 0;
+    &:nth-child(3n) {
+      margin-right: 0;
+    }
   }
 }
 
@@ -919,9 +977,6 @@ div.education {
             flex-direction: column;
     li {
       margin-right: 0;
-      -webkit-box-flex: 0;
-      -webkit-flex: 0 1 auto;
-              flex: 0 1 auto;
     }
   }
   .latest-topic-list, .top-topic-list {
@@ -939,15 +994,25 @@ div.education {
 .category-boxes, .category-boxes-with-topics {
   .category-box {
     background-color: #000;
-    .category-box-inner {
-      border: 0;
-      h3, .d-icon {
-        color: $tertiary;
-      }
-      .description {
-        color: $primary;
-      }
+    margin: 0 8px 8px 0;
+    &:nth-child(3n) {
+      margin-right: 0;
     }
+  }
+  .category-box-inner {
+    padding: 4px 8px;
+    border: 0;
+  }
+  h3 {
+    font-size: 1.17em;
+    color: $tertiary;
+  }
+  .description {
+    color: $primary;
+    margin-top: 8px;
+  }
+  .category-box-heading {
+    padding: 0;
   }
 }
 
@@ -1029,7 +1094,6 @@ aside.onebox {
 }
 
 .badge-notification {
-  padding: 0;
   &.new-posts, &.unread {
     background-color: transparent;
   }
@@ -1103,6 +1167,9 @@ aside.onebox {
       box-shadow: none;
       .d-icon { color: $primary; }
     }
+  }
+  &:active, &.btn-active {
+    background: transparent;
   }
   &[disabled], &.disabled {
     background: transparent;
@@ -1393,10 +1460,15 @@ aside.onebox {
     }
     .period-chooser-header {
       h2.selected-name {
+        font-size: $base-font-size;
         font-family: $base-font-family;
         .top-date-string {
           color: rgba(255,255,255,0.4);
         }
+      }
+      .d-icon {
+        margin: 0 0 10px 0;
+        padding-left: 0;
       }
     }
     .period-chooser-row {
