@@ -1,7 +1,7 @@
 {
   "name": "Ghost",
   "component": false,
-  "license_url": "https://github.com/melhosseiny/ghost/blob/master/ghost/LICENSE",
+  "license_url": "https://github.com/discourse/ghost/blob/main/LICENSE",
   "about_url": "https://meta.discourse.org/t/ghost-a-cyberpunk-theme-for-discourse/111806?u=melhosseiny",
   "authors": "https://github.com/melhosseiny",
   "theme_version": "0.0.3",
