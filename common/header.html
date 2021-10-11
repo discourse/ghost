@@ -115,45 +115,76 @@
   {{/if}}
 </script>
 
-<!-- Restructure category list item -->
-<script  type='text/x-handlebars' data-template-name='components/categories-only'>
-  {{#if categories}}
-    <ul class="category-list {{if showTopics 'with-topics'}}" aria-labelledby="categories-only-category">
-      {{#each categories as |c|}}
-        <li data-category-id={{c.id}} class="{{if c.description_excerpt 'has-description' 'no-description'}} {{if c.uploaded_logo.url 'has-logo' 'no-logo'}}">
-          <span class="category-color" style="background-color: #{{c.color}}"></span>
-          <span class="category">
-            {{category-title-link category=c}}
+<!-- Restructure parent-category-row -->
+<script  type='text/x-handlebars' data-template-name='components/parent-category-row'>
+  {{#unless isHidden}}
+    {{plugin-outlet name="category-list-above-each-category" connectorTagName="" tagName="" args=(hash category=category)}}
+
+    <li data-category-id={{category.id}} data-notification-level={{category.notificationLevelString}} class="{{if c.description_excerpt "has-description" "no-description"}} {{if category.uploaded_logo.url "has-logo" "no-logo"}}">
+      <div class="item">
+        <span class="category-color" style="background-color: #{{category.color}}"></span>
+        <span class="category {{if isMuted "muted"}}">
+          {{category-title-link category=category}}
+          {{#if category.description_excerpt}}
             <div class="category-description">
-              {{{dir-span c.description_excerpt htmlSafe="true"}}}
+              {{dir-span category.description_excerpt htmlSafe="true"}}
             </div>
-            {{#if c.subcategories}}
-              <div class='subcategories'>
-                {{#each c.subcategories as |s|}}
-                  <span class='subcategory'>
-                    {{category-title-before category=s}}
-                    {{category-link s hideParent="true"}}
-                    {{category-unread category=s}}
-                  </span>
-                {{/each}}
-              </div>
-            {{/if}}
-          </span>
-          <span class="topics">
-            <div title={{c.statTitle}}>{{{c.stat}}}</div>
-            {{category-unread category=c tagName="div" class="unread-new"}}
-          </span>
+          {{/if}}
+          {{#if category.subcategories}}
+            <div class='subcategories'>
+              {{#each category.subcategories as |subcategory|}}
+                {{sub-category-item category=subcategory listType=listType}}
+              {{/each}}
+            </div>
+          {{/if}}
+        </span>
+        <span class="topics">
+          <div title={{category.statTitle}}>{{{html-safe category.stat}}}</div>
+          {{category-unread category=category tagName="div" class="unread-new"}}
+        </span>
+        {{#unless isMuted}}
           {{#if showTopics}}
             <span class="latest">
-              {{#each c.featuredTopics as |t|}}
-                {{featured-topic topic=t latestTopicOnly=latestTopicOnly}}
+              {{#each category.featuredTopics as |t|}}
+                {{featured-topic topic=t}}
               {{/each}}
             </span>
           {{/if}}
-        </li>
-      {{/each}}
-    </ul>
+        {{/unless}}
+      </div>
+    </li>
+  {{/unless}}
+</script>
+
+<!-- Restructure category list item -->
+<script  type='text/x-handlebars' data-template-name='components/categories-only'>
+  {{#if categories}}
+    {{#if filteredCategories}}
+      <ul class="category-list {{if showTopics 'with-topics'}}" aria-labelledby="categories-only-category">
+        {{#each categories as |category|}}
+          {{parent-category-row category=category showTopics=showTopics}}
+        {{/each}}
+      </ul>
+    {{/if}}
+
+    {{#if mutedCategories}}
+      <div class="muted-categories">
+        <a href class="muted-categories-link" {{action "toggleShowMuted"}}>
+          <h3 class="muted-categories-heading">{{i18n "categories.muted"}}</h3>
+          {{#if mutedToggleIcon}}
+            {{d-icon mutedToggleIcon}}
+          {{/if}}
+        </a>
+        <ul class="category-list {{if showTopics "with-topics"}} {{unless showMutedCategories "hidden"}}">
+          {{#each categories as |category|}}
+            {{parent-category-row category=category showTopics=showTopics listType="muted"}}
+          {{/each}}
+        </ul>
+      </div>
+    {{/if}}
   {{/if}}
+
+  {{plugin-outlet name="below-categories-only" tagName="" args=(hash categories=categories showTopics=showTopics)}}
 </script>
 
 <script type="text/discourse-plugin" version="0.8">

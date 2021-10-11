@@ -1016,6 +1016,14 @@ div.education {
   }
 }
 
+.muted-categories-link {
+  border-color: transparent;
+  padding: 0;
+  .muted-categories-heading, .d-icon {
+    color: var(--primary);
+  }
+}
+
 aside.onebox {
   border-width: 1px;
   border-color: $tertiary;
