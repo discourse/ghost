@@ -284,8 +284,16 @@ div.menu-links-header .menu-links-row {
 
 // base:search-menu
 .search-menu {
-  .results .main-results + .secondary-results {
-    border-color: $tertiary;
+  .results {
+    .main-results + .secondary-results {
+      border-color: var(--tertiary);
+    }
+    .secondary-results .search-result-user .item:hover .user-result .user-titles,
+    .secondary-results .search-result-user .item:focus-within .user-result .user-titles {
+      .name, .username {
+        color: var(--secondary);
+      }
+    }
   }
 }
 
@@ -1052,27 +1060,28 @@ aside.onebox {
 
 // base:search
 .search-container {
-  .search-advanced {
-    .search-bar input { padding: 9px; }
-    .search-info { border-bottom: 0 none; }
-    .search-notice .fps-invalid { border: 0; }
+  .search-page-heading span.term {
+    background: var(--tertiary);
   }
-  .search-advanced-sidebar {
-    .search-advanced-title, .search-advanced-filters {
-      background: $cyberpunk;
-    }
-    .search-advanced-filters {
-      border-bottom: 1px solid $highlight-alt;
-    }
+  .search-header {
+    background: $cyberpunk;
+    border-bottom: 1px solid $highlight-alt;
+  }
+  .search-bar, .search-filters, .search-filters .search-advanced-filters {
+    background: transparent;
+  }
+  .search-advanced {
+    .search-info { border-bottom: 0 none; margin-bottom: 0; }
+    .search-notice .fps-invalid { border: 0; }
   }
 }
 .search-results {
   .fps-result {
     margin-bottom: 8px;
     padding: 8px;
-    background-color: $secondary;
+    background-color: var(--secondary);
     border-bottom: 1px solid $bios;
-    .search-link, .search-link:visited .topic-title { color: $primary; }
+    .search-link, .search-link:visited .topic-title { color: var(--primary); }
     .date { margin-right: 4px; }
   }
 }
@@ -1340,7 +1349,7 @@ aside.onebox {
 // select-kit
 .select-kit {
   // category-chooser
-  &.combo-box.category-drop {
+  &.combo-box.category-chooser, &.combo-box.category-drop {
     .select-kit-row {
       &.is-highlighted, &.is-selected.is-highlighted {
         .badge-wrapper.bullet span.badge-category .category-name, .topic-count { color: #fff; }
