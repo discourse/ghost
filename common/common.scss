@@ -748,7 +748,7 @@ aside.quote .title {
   }
 }
 
-.topic-status-info {
+.topic-status-info, .topic-timer-info {
   border-top: 0 none;
   &:empty {
     display: none;
