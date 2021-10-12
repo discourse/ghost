@@ -48,13 +48,8 @@
 
 .user-table {
   .wrapper {
-    display: -webkit-box;
-    display: -webkit-flex;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
   }
 }
 
@@ -71,9 +66,7 @@
 .topic-list {
   margin-left: 0;
   .topic-list-item {
-    -webkit-box-align: start;
-    -webkit-align-items: start;
-            align-items: start;
+    align-items: start;
     padding: 8px;
     img.avatar {
       margin-right: 8px;
@@ -83,8 +76,6 @@
     }
     .posts-map {
       font-size: 1em;
-      display: -webkit-box;
-      display: -webkit-flex;
       display: flex;
     }
     .num.posts a {
@@ -131,23 +122,14 @@ tr.category-topic-link {
   .category-list {
     margin-left: 0;
     li {
-      -webkit-box-flex: 0;
-      -webkit-flex: 0 1 100%;
-              flex: 0 1 100%;
+      flex: 0 1 100%;
       margin-right: 0;
     }
     footer {
       margin-top: 8px;
-      display: -webkit-box;
-      display: -webkit-flex;
       display: flex;
-      -webkit-box-orient: horizontal;
-      -webkit-box-direction: normal;
-      -webkit-flex-direction: row;
-              flex-direction: row;
-      -webkit-box-pack: justify;
-      -webkit-justify-content: space-between;
-              justify-content: space-between;
+      flex-direction: row;
+      justify-content: space-between;
       figure {
         margin: 0;
       }
@@ -217,9 +199,7 @@ tr.category-topic-link {
 .dashboard-next-reports {
   .reports-list {
     .report {
-      -webkit-box-flex: 0;
-      -webkit-flex: 0 1 100%;
-              flex: 0 1 100%;
+      flex: 0 1 100%;
       margin-right: 0;
     }
     .report:last-child {
@@ -230,8 +210,7 @@ tr.category-topic-link {
 
 // admin:badges
 .admin-badges .form-horizontal textarea {
-  -moz-box-sizing: border-box;
-       box-sizing: border-box;
+  box-sizing: border-box;
   max-width: 100%;
 }
 
@@ -248,8 +227,7 @@ tr.category-topic-link {
 .admin-customize .show-current-style {
   padding-left: 8px;
   padding-right: 8px;
-  -moz-box-sizing: border-box;
-       box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 // admin: admin_base
@@ -272,8 +250,7 @@ tr.category-topic-link {
   .admin-detail {
     margin-left: 0;
     padding-right: 10px;
-    -moz-box-sizing: border-box;
-         box-sizing: border-box;
+    box-sizing: border-box;
   }
 }
 
