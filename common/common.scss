@@ -237,52 +237,47 @@ blockquote {
     border: 0;
     background-image: $separator;
   }
-}
-
-.user-menu .quick-access-panel .show-all a {
-  background-color: $tertiary-low;
-  .d-icon { color: $tertiary; }
-  &:hover {
-    background-color: $highlight;
-    .d-icon { color: $secondary; }
+  .panel-body-bottom .btn {
+    background-color: transparent;
+    color: var(--tertiary);
+    .d-icon {
+      color: var(--tertiary);
+    }
   }
 }
 
-.user-menu .quick-access-panel li:hover,
-.menu-panel li a:hover,
-.menu-panel li a:focus,
-.menu-panel li a.widget-link:hover,
-.menu-panel li a.widget-link:focus,
-.menu-panel li.heading a.widget-link:hover,
-.menu-panel li.heading a.widget-link:focus {
-  background-color: $highlight;
-  color: rgba(0,0,0,0.8);
-  span {
-    color: $secondary;
-  }
-}
-
-div.menu-links-header {
-  .menu-links-row {
-    border-color: $tertiary;
-    li {
-      a {
-        color: $tertiary;
-        .fa {
-          color: $tertiary;
-        }
-        &.active {
-          border-color: $tertiary;
-          &:hover .fa, span.d-label {
-            color: $tertiary;
-          }
-        }
-        &:hover {
-          .fa {
-            color: $secondary;
-          }
-        }
+.user-menu .quick-access-panel, .menu-panel {
+  li:not(.show-all):not(.category-link) {
+    &:hover, &:focus-within {
+      color: var(--secondary);
+      a, span {
+        color: var(--secondary);
       }
+    }
+  }
+}
+
+.user-menu .quick-access-panel {
+  border-color: var(--tertiary);
+}
+
+div.menu-links-header .menu-links-row {
+  button {
+    background-color: transparent;
+    .d-icon {
+      color: var(--tertiary);
+    }
+    &:hover {
+      background-color: var(--tertiary);
+      .d-icon {
+        color: var(--primary);
+      }
+    }
+    &.active {
+      background-color: transparent;
+      border-top-color: var(--tertiary);
+      border-left-color: var(--tertiary);
+      border-right-color: var(--tertiary);
     }
   }
 }

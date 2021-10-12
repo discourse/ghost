@@ -56,7 +56,7 @@
       {{~/if}}
       {{~raw-plugin-outlet name="topic-list-after-title"}}
       {{~#if showTopicPostBadges}}
-      {{~raw "topic-post-badges" unread=topic.unread newPosts=topic.displayNewPosts unseen=topic.unseen url=topic.lastUnreadUrl newDotText=newDotText}}
+      {{~raw "topic-post-badges" unread=topic.unread unseen=topic.unseen url=topic.lastUnreadUrl newDotText=newDotText}}
       {{~/if}}
     </span>
     <span class="link-bottom-line">
@@ -201,4 +201,56 @@
   topicListItem.reopen({
     tagName: 'li'
   });
+</script>
+
+<script type="text/discourse-plugin" version="0.8">
+api.reopenWidget("quick-access-panel", {
+  html(attrs, state) {
+    const h = require("virtual-dom").h;
+    if (!state.loaded) {
+      this.refreshNotifications(state);
+    }
+
+    if (state.loading) {
+      return [h("div.spinner-container", h("div.spinner"))];
+    }
+
+    const items = this.getItems().length
+      ? this.getItems().map((item) => this.itemHtml(item))
+      : [this.emptyStatePlaceholderItem()];
+
+    let bottomItems = [];
+
+    if (!this.hideBottomItems()) {
+      const tab = I18n.t(this.attrs.titleKey).toLowerCase();
+
+      bottomItems.push(
+        // intentionally a link so it can be ctrl clicked
+        this.attach("link", {
+          title: "view_all",
+          titleOptions: { tab },
+          icon: "chevron-down",
+          className: "btn btn-primary btn-icon no-text show-all",
+          "aria-label": "view_all",
+          ariaLabelOptions: { tab },
+          href: this.showAllHref(),
+        })
+      );
+    }
+
+    if (this.hasUnread()) {
+      bottomItems.push(
+        this.attach("button", {
+          title: "user.dismiss_notifications_tooltip",
+          icon: "check",
+          label: "user.dismiss",
+          className: "btn btn-primary notifications-dismiss",
+          action: "dismissNotifications",
+        })
+      );
+    }
+
+    return [h("ul", items), h("div.panel-body-bottom", bottomItems)];
+  }
+});
 </script>
