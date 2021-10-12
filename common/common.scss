@@ -1785,3 +1785,58 @@ aside.onebox {
 .admin-content {
   margin-bottom: 10px;
 }
+
+// plugins:docs
+.docs-search, .mobile-view .docs .docs-search {
+  padding: 0;
+}
+
+.docs-search-wrapper, .mobile-view .docs .docs-search .docs-search-bar {
+  width: 100%;
+}
+
+.docs-search-wrapper .btn.clear-search {
+  background-color: var(--primary);
+  color: var(--secondary);
+}
+
+.docs-browse .docs-topic-list {
+  .topic-list {
+    display: table;
+  }
+  th:hover {
+    background-color: var(--highlight-medium);
+    color: var(--secondary);
+  }
+}
+
+.docs-browse .docs-items .docs-item:hover {
+  color: var(--secondary);
+  .docs-item-count {
+    color: var(--secondary);
+  }
+}
+
+.docs-browse .docs-filters {
+  background: $cyberpunk;
+}
+
+.visible .docs-cards-filter {
+  margin: 0;
+  margin-bottom: 1em;
+}
+
+.docs-cards-filter {
+  width: 100%;
+}
+
+.docs-card-box {
+  background: var(--secondary);
+  border-color: transparent;
+  box-shadow: none;
+  &:hover {
+    box-shadow: none;
+    transform: none;
+    background-color: rgba(33,36,36,1);
+  }
+}
