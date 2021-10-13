@@ -688,6 +688,15 @@ aside.quote .title {
   .small-action-desc {
     color: $primary;
   }
+  &.topic-post-visited .topic-post-visited-line {
+    border-color: var(--tertiary);
+    margin-bottom: calc(1rem + 8px);
+    .topic-post-visited-message {
+      background-color: var(--tertiary);
+      color: var(--primary);
+
+    }
+  }
 }
 
 #topic-footer-buttons {
