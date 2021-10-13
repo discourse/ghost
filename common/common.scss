@@ -244,12 +244,12 @@ div.menu-links-header .menu-links-row {
 
 // base:search-menu
 .search-menu {
+  .searching {
+    top: 0.5em;
+  }
   .results {
-    .main-results + .secondary-results {
-      border-color: var(--tertiary);
-    }
-    .secondary-results .search-result-user .item:hover .user-result .user-titles,
-    .secondary-results .search-result-user .item:focus-within .user-result .user-titles {
+    .results .search-result-user .item:hover .user-result .user-titles,
+    .results .search-result-user .item:focus-within .user-result .user-titles {
       .name, .username {
         color: var(--secondary);
       }
