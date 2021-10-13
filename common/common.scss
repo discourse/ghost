@@ -724,14 +724,15 @@ aside.quote .title {
   flex-direction: column;
   list-style-type: none;
   padding-left: 0;
-  .badge-notification {
-    &.new-topic {
-      text-shadow:
+  .badge-notification.new-topic {
+    top: -3px;
+    &::before {
+      border-radius: 0;
+      box-shadow:
         2px 0 25px $tertiary,
         0 2px 25px $tertiary,
         -2px 0 25px $tertiary,
         0 -2px 25px $tertiary;
-      &:before { content: '\25AA'; }
     }
   }
   hr.topic-list-item-separator {
@@ -979,6 +980,34 @@ aside.onebox {
     border-bottom: 1px solid $bios;
     .search-link, .search-link:visited .topic-title { color: var(--primary); }
     .date { margin-right: 4px; }
+  }
+}
+
+// base:personal-message
+.archetype-private_message {
+  .topic-body .cooked {
+    border-radius: 0;
+    border-color: transparent;
+  }
+  .current-user-post:not(.moderator) .topic-body .cooked {
+    border: none;
+  }
+  .topic-map {
+    margin-left: 0;
+    border-radius: 0;
+    padding: 0;
+  }
+  .map:first-of-type .buttons .btn {
+    border-radius: 0;
+  }
+  .topic-avatar, .topic-body {
+    border-bottom: 1px solid $bios;
+  }
+  .small-action-desc.timegap {
+    padding: 1em 0;
+    margin-top: 0;
+    margin-left: 0;
+    background: transparent;
   }
 }
 
