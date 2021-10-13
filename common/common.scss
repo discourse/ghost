@@ -541,6 +541,12 @@ table.group-members {
   }
 }
 
+.fullscreen-composer #reply-control.fullscreen {
+  .reply-to, &.show-preview .d-editor-textarea-wrapper {
+    border-color: transparent;
+  }
+}
+
 .autocomplete {
   border: 0;
   ul li {
@@ -1438,6 +1444,9 @@ aside.onebox {
     }
   }
   // select-kit
+  .select-kit-header {
+    padding: 4px 8px;
+  }
   .select-kit-row {
     &.is-highlighted {
       background: $tertiary-alt;
