@@ -724,6 +724,10 @@ aside.quote .title {
   }
 }
 
+.posts-filtered-notice {
+  max-width: calc(700px + (11px * 2) + 45px - (0.8em * 2));
+}
+
 // base:topic-list
 @keyframes fade-in-rgba {
 	0% { background-color: rgba(0,0,0,1); }
