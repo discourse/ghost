@@ -618,7 +618,7 @@ aside.quote .title {
   color: rgba(0,0,0,0.8);
 }
 
-.topic-post {
+.topic-post, .placeholder {
   margin-bottom: 8px;
 }
 
@@ -726,6 +726,20 @@ aside.quote .title {
 
 .posts-filtered-notice {
   max-width: calc(700px + (11px * 2) + 45px - (0.8em * 2));
+}
+
+.placeholder-text {
+  width: calc(100% - 22px);
+  margin-right: 11px;
+  height: 1em;
+}
+
+.placeholder-avatar {
+  border-radius: 0;
+}
+
+.placeholder-animation, .placeholder-avatar:before {
+  background: linear-gradient(to right, var(--tertiary-very-low) 10%, var(--tertiary-low) 18%, var(--tertiary-very-low) 36%);
 }
 
 // base:topic-list

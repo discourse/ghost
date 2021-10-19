@@ -56,13 +56,10 @@
 }
 
 // base:topic-post
-.topic-post {
-  margin-bottom: 8px;
-  article {
-    .row {
-      display: flex;
-      flex-direction: row;
-    }
+.topic-post article, .placeholder {
+  .row {
+    display: flex;
+    flex-direction: row;
   }
 }
 
