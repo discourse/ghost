@@ -53,21 +53,21 @@ table {
 }
 
 .discourse-no-touch .sortable:hover {
-  background-color: $tertiary-alt
+  background-color: $tertiary-alt;
 }
 
 // input
 textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"] {
   border: 0;
   padding: 4px 8px;
-  caret-color: $highlight;
+  caret-color: var(--highlight);
   &::-webkit-input-placeholder {
     color: #fff;
   }
 }
 
 textarea[disabled] {
-  background-color: $secondary;
+  background-color: var(--secondary);
   opacity: 0.4;
 }
 
@@ -105,7 +105,7 @@ div.ac-wrap,
   .btn-default,
   .btn.btn-icon {
     border-radius: 0;
-    .d-icon { color: $primary; }
+    .d-icon { color: var(--primary); }
     .discourse-no-touch & {
       &:hover,
       &.btn-hover {
@@ -119,7 +119,7 @@ div.ac-wrap,
 img.avatar {
   display: inline-block;
   background-color: #00d0c1;
-  border-bottom: 2px solid $highlight;
+  border-bottom: 2px solid var(--highlight);
   border-radius: 0;
 }
 
@@ -161,7 +161,7 @@ blockquote {
   &-prepend,
   &-append {
     .add-on {
-      background-color: $tertiary;
+      background-color: var(--tertiary);
       border: 0;
     }
   }
@@ -294,7 +294,7 @@ div.menu-links-header .menu-links-row {
 .alert.alert-info {
   background-color: $tertiary-alt;
   &.clickable, a, button {
-    color: $primary;
+    color: var(--primary);
   }
   a, .btn-link.btn-text {
     text-decoration: underline;
@@ -305,7 +305,7 @@ div.menu-links-header .menu-links-row {
       opacity: 0.6;
     }
     .d-icon {
-      color: $primary;
+      color: var(--primary);
     }
   }
 }
@@ -313,14 +313,14 @@ div.menu-links-header .menu-links-row {
 // base:spinner
 .spinner {
   border-width: 2px;
-  border-color: $tertiary;
+  border-color: var(--tertiary);
   border-right-color: transparent;
 }
 
 // base:group(s)
 .groups-boxes {
   .group-box {
-    background-color: $secondary;
+    background-color: var(--secondary);
     border: 0;
   }
 }
@@ -488,7 +488,7 @@ table.group-members {
 }
 
 .check-display.status-checked {
-  background-color: $tertiary;
+  background-color: var(--tertiary);
 }
 
 // base:user-card
@@ -521,21 +521,21 @@ table.group-members {
   .wmd-controls {
     .btn {
       border-radius: 0;
-      .d-icon { color: $primary; }
+      .d-icon { color: var(--primary); }
       .discourse-no-touch &:hover { box-shadow: none; }
     }
   }
   &.draft, &.saving {
-    color: $primary;
+    color: var(--primary);
     .composer-controls {
-      .d-icon { color: $primary; }
+      .d-icon { color: var(--primary); }
     }
   }
   .reply-to {
-    .d-icon { color: $primary; }
+    .d-icon { color: var(--primary); }
     .composer-action-title {
       .action-title {
-        color: $primary;
+        color: var(--primary);
       }
     }
   }
@@ -556,7 +556,7 @@ table.group-members {
         color: rgba(255,255,255,0.8);
       }
       &.selected {
-        background-color: $tertiary;
+        background-color: var(--tertiary);
       }
     }
   }
@@ -567,9 +567,9 @@ table.group-members {
     ul li {
       a {
         &:hover {
-          background-color: $highlight;
+          background-color: var(--highlight);
           span.username {
-            color: $secondary;
+            color: var(--secondary);
           }
           span.name {
             color: rgba(0,0,0,0.5);
@@ -600,7 +600,7 @@ table.group-members {
 
 // base:topic-post
 @keyframes background-fade-highlight {
-  0% { background-color: $tertiary-low; }
+  0% { background-color: var(--tertiary-low); }
   100% { background-color: #000; }
 }
 
@@ -614,7 +614,7 @@ aside.quote .title {
 }
 
 .moderator .regular>.cooked {
-  background-color: $highlight;
+  background-color: var(--highlight);
   color: rgba(0,0,0,0.8);
 }
 
@@ -681,7 +681,7 @@ aside.quote .title {
 }
 
 .gap {
-  color: $primary;
+  color: var(--primary);
   padding-left: 0;
 }
 
@@ -692,7 +692,7 @@ aside.quote .title {
     display: none;
   }
   .small-action-desc {
-    color: $primary;
+    color: var(--primary);
   }
   &.topic-post-visited .topic-post-visited-line {
     border-color: var(--tertiary);
@@ -707,11 +707,11 @@ aside.quote .title {
 
 #topic-footer-buttons {
   .bookmark.bookmarked {
-    .d-icon-bookmark { color: $primary; }
+    .d-icon-bookmark { color: var(--primary); }
     .discourse-no-touch & {
       &:hover,
       &.btn-hover {
-        .d-icon-bookmark { color: $primary; }
+        .d-icon-bookmark { color: var(--primary); }
       }
     }
   }
@@ -762,10 +762,10 @@ aside.quote .title {
     &::before {
       border-radius: 0;
       box-shadow:
-        2px 0 25px $tertiary,
-        0 2px 25px $tertiary,
-        -2px 0 25px $tertiary,
-        0 -2px 25px $tertiary;
+        2px 0 25px var(--tertiary),
+        0 2px 25px var(--tertiary),
+        -2px 0 25px var(--tertiary),
+        0 -2px 25px var(--tertiary);
     }
   }
   hr.topic-list-item-separator {
@@ -904,7 +904,7 @@ div.education {
     .category-text-title {
       justify-content: center;
       .d-icon {
-        color: $tertiary;
+        color: var(--tertiary);
       }
     }
     &:nth-child(3n) {
@@ -947,10 +947,10 @@ div.education {
   }
   h3 {
     font-size: 1.17em;
-    color: $tertiary;
+    color: var(--tertiary);
   }
   .description {
-    color: $primary;
+    color: var(--primary);
     margin-top: 8px;
   }
   .category-box-heading {
@@ -968,7 +968,7 @@ div.education {
 
 aside.onebox {
   border-width: 1px;
-  border-color: $tertiary;
+  border-color: var(--tertiary);
 }
 
 // base:colorpicker
@@ -1049,7 +1049,7 @@ aside.onebox {
 .badge-wrapper {
   .badge-category {
     .category-name {
-      color: $primary;
+      color: var(--primary);
     }
   }
 }
@@ -1058,9 +1058,9 @@ aside.onebox {
   &.bullet {
     margin-right: 8px;
     span.badge-category {
-      color: $tertiary;
+      color: var(--tertiary);
       .category-name {
-        color: $tertiary;
+        color: var(--tertiary);
       }
       font-weight: bold;
     }
@@ -1076,15 +1076,15 @@ aside.onebox {
     background-color: transparent;
   }
   &.new-posts {
-    color: $tertiary;
+    color: var(--tertiary);
   }
   &.unread {
-    color: $highlight;
+    color: var(--highlight);
   }
 }
 
 .badge-group {
-  background-color: $secondary;
+  background-color: var(--secondary);
   border: 0;
 }
 
@@ -1104,46 +1104,46 @@ aside.onebox {
 #user-card,
 .signup-cta {
   li.btn, label.btn, button.btn, a.btn[href] {
-    color: $primary;
+    color: var(--primary);
     background: transparent;
     border: 3px solid transparent;
     border-radius: 4px;
     padding: 4px 8px;
     text-transform: uppercase;
-    .d-icon { color: $primary; }
+    .d-icon { color: var(--primary); }
     .discourse-no-touch & {
       &:hover,
       &.btn-hover {
-        color: $primary;
+        color: var(--primary);
         border-color: transparent;
         background-color: rgba(255,255,255,0.25);
         box-shadow: none;
-        .d-icon { color: $primary; }
+        .d-icon { color: var(--primary); }
       }
     }
     &[disabled], &.disabled {
       background: transparent;
-      .d-icon { color: $primary; }
+      .d-icon { color: var(--primary); }
     }
   }
 }
 
 .btn {
-  color: $primary;
+  color: var(--primary);
   background: transparent;
   border: 3px solid transparent;
   border-radius: 4px;
   padding: 4px 8px;
   text-transform: uppercase;
-  .d-icon { color: $primary; }
+  .d-icon { color: var(--primary); }
   .discourse-no-touch & {
     &:hover,
     &.btn-hover {
-      color: $primary;
+      color: var(--primary);
       border-color: transparent;
       background-color: rgba(255,255,255,0.25);
       box-shadow: none;
-      .d-icon { color: $primary; }
+      .d-icon { color: var(--primary); }
     }
   }
   &:active, &.btn-active {
@@ -1151,54 +1151,54 @@ aside.onebox {
   }
   &[disabled], &.disabled {
     background: transparent;
-    .d-icon { color: $primary; }
+    .d-icon { color: var(--primary); }
   }
   &[href] {
-    color: $primary;
+    color: var(--primary);
   }
 }
 
 .btn.btn-default {
   background-color: transparent;
-  color: $quaternary;
+  color: var(--quaternary);
   border-width: 3px;
-  border-color: $quaternary;
+  border-color: var(--quaternary);
   .d-icon {
-    color: $quaternary;
+    color: var(--quaternary);
   }
   .discourse-no-touch & {
     &:hover,
     &.btn-hover {
-      color: $primary;
-      border-color: $quaternary;
-      background-color: $quaternary;
-      box-shadow: 0 0 25px -3px $quaternary;
-      .d-icon { color: $primary; }
+      color: var(--primary);
+      border-color: var(--quaternary);
+      background-color: var(--quaternary);
+      box-shadow: 0 0 25px -3px var(--quaternary);
+      .d-icon { color: var(--primary); }
     }
   }
   &[disabled], &.disabled {
     background: transparent;
-    .d-icon { color: $quaternary; }
+    .d-icon { color: var(--quaternary); }
   }
   &[href] {
-    color: $quaternary;
+    color: var(--quaternary);
   }
 }
 
 .btn.btn-primary {
   background-color: transparent;
-  color: $tertiary;
+  color: var(--tertiary);
   border-width: 3px;
-  border-color: $tertiary;
-  .d-icon { color: $tertiary; }
+  border-color: var(--tertiary);
+  .d-icon { color: var(--tertiary); }
   .discourse-no-touch & {
     &:hover,
     &.btn-hover {
-      color: $primary;
-      border-color: $tertiary;
-      background-color: $tertiary;
-      box-shadow: 0 0 25px -3px $tertiary;
-      .d-icon { color: $primary; }
+      color: var(--primary);
+      border-color: var(--tertiary);
+      background-color: var(--tertiary);
+      box-shadow: 0 0 25px -3px var(--tertiary);
+      .d-icon { color: var(--primary); }
     }
   }
   &:active, &.btn-active {
@@ -1208,23 +1208,23 @@ aside.onebox {
     background: transparent;
   }
   &[href] {
-    color: $tertiary;
+    color: var(--tertiary);
   }
 }
 
 .btn.btn-danger {
   background-color: transparent;
-  color: $danger;
+  color: var(--danger);
   border-width: 3px;
-  border-color: $danger;
-  .d-icon { color: $danger; }
+  border-color: var(--danger);
+  .d-icon { color: var(--danger); }
   .discourse-no-touch & {
     &:hover,
     &.btn-hover {
-      color: $primary;
-      border-color: $danger;
-      background-color: $danger;
-      box-shadow: 0 0 25px -3px $danger;
+      color: var(--primary);
+      border-color: var(--danger);
+      background-color: var(--danger);
+      box-shadow: 0 0 25px -3px var(--danger);
     }
   }
   &:active, &.btn-active {
@@ -1234,7 +1234,7 @@ aside.onebox {
     background: transparent;
   }
   &[href] {
-    color: $danger;
+    color: var(--danger);
   }
 }
 
@@ -1248,9 +1248,9 @@ aside.onebox {
 .nav-pills, .admin-controls .nav-pills {
   >li>a:hover, >li.active>a, >li>a.active {
     color: #fff;
-    background-color: $tertiary;
+    background-color: var(--tertiary);
     border-radius: 4px;
-    box-shadow: 0 0 25px -3px $tertiary;
+    box-shadow: 0 0 25px -3px var(--tertiary);
   }
 }
 
@@ -1299,7 +1299,7 @@ aside.onebox {
     border-bottom: 0;
     &.unread {
       background-color: $tertiary-alt;
-      a, a:visited { color: $primary; }
+      a, a:visited { color: var(--primary); }
     }
   }
 }
@@ -1326,7 +1326,7 @@ aside.onebox {
     }
     &.is-disabled {
       .select-kit-header {
-        background: $secondary;
+        background: var(--secondary);
         opacity: 0.4;
       }
     }
@@ -1342,7 +1342,7 @@ aside.onebox {
       }
     }
     .d-icon {
-      color: $primary;
+      color: var(--primary);
     }
   }
   // dropdown-select-box
@@ -1353,7 +1353,7 @@ aside.onebox {
     }
     &.categories-admin-dropdown, &.topic-notifications-options {
       .dropdown-select-box-header {
-        border: 3px solid $quaternary;
+        border: 3px solid var(--quaternary);
       }
     }
     .select-kit-body {
@@ -1367,10 +1367,10 @@ aside.onebox {
       }
       &.is-selected {
         .texts .desc { color: rgba(0,0,0,0.6); }
-        .texts .name { color: $secondary; }
+        .texts .name { color: var(--secondary); }
       }
       &.is-selected.is-highlighted {
-        .texts .name { color: $primary; }
+        .texts .name { color: var(--primary); }
       }
     }
   }
@@ -1378,12 +1378,12 @@ aside.onebox {
   &.combobox.future-date-input-selector {
     .is-selected {
       .future-date-input-selector-datetime {
-        color: $secondary;
+        color: var(--secondary);
       }
     }
     .is-selected.is-highlighted {
       .future-date-input-selector-datetime {
-        color: $primary;
+        color: var(--primary);
       }
     }
   }
@@ -1391,7 +1391,7 @@ aside.onebox {
   &.combo-box.mini-tag-chooser {
     &.no-tags {
       .select-kit-header .selected-name {
-        color: $primary;
+        color: var(--primary);
       }
     }
     .select-kit-filter {
@@ -1402,7 +1402,7 @@ aside.onebox {
         border-bottom: 0;
         .selected-tag {
           background-color: $tertiary-alt;
-          .d-icon { color: $primary; }
+          .d-icon { color: var(--primary); }
         }
       }
     }
@@ -1452,11 +1452,11 @@ aside.onebox {
     .period-chooser-row {
       .top-date-string { color: rgba(255,255,255,0.6); }
       &.is-highlighted, &.is-selected.is-highlighted {
-        .date-section { color: $primary; }
+        .date-section { color: var(--primary); }
         .top-date-string { color: rgba(255,255,255,0.8); }
       }
       &.is-selected {
-        .date-section { color: $secondary; }
+        .date-section { color: var(--secondary); }
         .top-date-string { color: rgba(0,0,0,0.6); }
       }
     }
@@ -1547,7 +1547,7 @@ aside.onebox {
     .tab {
       border: 0;
       &.active {
-        color: $primary;
+        color: var(--primary);
         background-color: transparent;
       }
       &:not(.active):hover {
@@ -1653,7 +1653,7 @@ aside.onebox {
   .setting {
     .setting-value {
       .uploaded-image-preview {
-        background-color: $secondary;
+        background-color: var(--secondary);
       }
     }
   }
@@ -1662,7 +1662,7 @@ aside.onebox {
 // admin:staff_logs
 .staff-action-logs-controls {
   a.filter  {
-    background-color: $tertiary;
+    background-color: var(--tertiary);
   }
 }
 
@@ -1676,7 +1676,7 @@ aside.onebox {
 .admin-users.admin-user {
   padding: 8px;
   .details h1 {
-    border-bottom: 2px solid $tertiary;
+    border-bottom: 2px solid var(--tertiary);
   }
 }
 

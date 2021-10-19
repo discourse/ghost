@@ -161,10 +161,10 @@ tr.category-topic-link {
 // component: navs
 .nav-pills > li.navigation-toggle {
   color: #fff;
-  background-color: $tertiary;
+  background-color: var(--tertiary);
   border: 0;
   border-radius: 4px;
-  box-shadow: 0 0 25px -3px $tertiary;
+  box-shadow: 0 0 25px -3px var(--tertiary);
 }
 
 .list-controls .nav-pills .drop {
