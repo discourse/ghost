@@ -854,6 +854,9 @@ aside.quote .title {
 
 .topic-body {
   padding-top: 8px;
+  .cooked {
+    padding-left: 0;
+  }
   .topic-meta-data { padding-left: 0; }
   .who-liked {
     width: auto;
