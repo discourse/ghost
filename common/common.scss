@@ -1324,6 +1324,7 @@ div.education {
   }
   &:active, &.btn-active {
     background: transparent;
+    border-bottom-color: transparent;
   }
   &[disabled], &.disabled {
     background: transparent;
