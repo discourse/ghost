@@ -722,6 +722,7 @@ aside.onebox {
   .topic-body .cooked {
     border-radius: 0;
     border-color: transparent;
+    margin-left: -2em;
   }
   .current-user-post:not(.moderator) .topic-body .cooked {
     border: none;
@@ -981,7 +982,10 @@ aside.quote .title {
   padding-left: 0;
   .badge-notification.new-topic {
     top: -3px;
+    padding-left: 0;
+    color: var(--primary);
     &::before {
+      margin-right: 4px;
       border-radius: 0;
       box-shadow:
         2px 0 25px var(--tertiary),
