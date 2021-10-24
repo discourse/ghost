@@ -1761,6 +1761,11 @@ kbd {
   }
 }
 
+.docs-browse .docs-items {
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+
 .docs-browse .docs-items .docs-item:hover {
   color: var(--secondary);
   .docs-item-count {
