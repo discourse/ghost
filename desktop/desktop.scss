@@ -1,6 +1,69 @@
-// color
-
 @import "variables";
+
+// admin:dashboard
+.dashboard-next {
+  &.admin-contents {
+    padding: 8px;
+    margin-top: 0;
+  }
+  .section .section-title, .section-title {
+    border: 0;
+  }
+  .navigation {
+    border: 0;
+    .navigation-item:hover {
+      background-color: rgba(0,0,0,0.25);
+    }
+  }
+}
+
+.dashboard-next-reports {
+  .reports-list {
+    .report {
+      box-sizing: border-box;
+      width: calc(33.33% - 8px);
+    }
+    .report:nth-child(3n) {
+      margin-right: 0;
+    }
+  }
+}
+
+// base:category-list
+.category-list {
+  li {
+    box-sizing: border-box;
+    width: calc(33.33% - (8px/3)*2);
+  }
+}
+
+.categories-and-latest, .categories-and-top {
+  .category-list {
+    li {
+      width: auto;
+    }
+  }
+}
+
+.category-boxes, .category-boxes-with-topics {
+  .category-box {
+    width: calc(33.33% - (8px/3)*2);
+  }
+}
+
+// base:compose
+.fullscreen-composer #reply-control {
+  &.fullscreen {
+    &:before {
+      background: $bios;
+    }
+  }
+}
+
+.composer-popup {
+  background: $bios;
+  box-shadow: none;
+}
 
 // base:group(s)
 .group {
@@ -27,43 +90,11 @@
   }
 }
 
-// base:compose
-.fullscreen-composer #reply-control {
-  &.fullscreen {
-    &:before {
-      background: $bios;
-    }
-  }
-}
-
-.composer-popup {
-  background: $bios;
-}
-
-// base:topic
-#topic-title .edit-topic-title {
-  max-width: 774px;
-}
-
-.private-message-glyph {
-  color: $primary;
-}
-
-.post-actions {
-  margin-right: 8px;
-  .trigger-user-card {
-    margin-right: 4px;
-  }
-}
-
 // base:topic-post
-.topic-post {
-  margin-bottom: 8px;
-  article {
-    .row {
-      display: flex;
-      flex-direction: row;
-    }
+.topic-post article, .placeholder {
+  .row {
+    display: flex;
+    flex-direction: row;
   }
 }
 
@@ -77,6 +108,10 @@
   padding-top: 8px;
   padding-left: 8px;
   padding-right: 8px;
+}
+
+.topic-post.sticky-avatar .topic-avatar {
+  margin-bottom: 0;
 }
 
 .topic-body {
@@ -100,67 +135,29 @@
 }
 
 // base:topic
+#topic-title .edit-topic-title {
+  max-width: 774px;
+}
+
+.private-message-glyph {
+  color: var(--primary);
+}
+
+.post-actions {
+  margin-right: 8px;
+  .trigger-user-card {
+    margin-right: 4px;
+  }
+}
+
 .post-menu-area {
   margin-right: 8px;
-}
-
-// base:category-list
-.category-list {
-  li {
-    box-sizing: border-box;
-    width: calc(33.33% - (8px/3)*2);
-  }
-}
-
-.categories-and-latest, .categories-and-top {
-  .category-list {
-    li {
-      width: auto;
-    }
-  }
-}
-
-.category-boxes, .category-boxes-with-topics {
-  .category-box {
-    width: calc(33.33% - (8px/3)*2);
-  }
 }
 
 // base:login
 .d-modal.create-account .login-form::before,
 .d-modal.create-account .login-form::after {
   content:none;
-}
-
-// admin:dashboard_next
-.dashboard-next {
-  &.admin-contents {
-    padding: 8px;
-    margin-top: 0;
-  }
-  .section .section-title, .section-title {
-    border: 0;
-  }
-  .navigation {
-    border: 0;
-    .navigation-item:hover {
-      background-color: rgba(0,0,0,0.25);
-    }
-  }
-}
-
-// admin
-// admin:dashboard_next
-.dashboard-next-reports {
-  .reports-list {
-    .report {
-      box-sizing: border-box;
-      width: calc(33.33% - 8px);
-    }
-    .report:nth-child(3n) {
-      margin-right: 0;
-    }
-  }
 }
 
 // plugins:docs
