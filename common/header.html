@@ -34,7 +34,7 @@
 
 <script type='text/x-handlebars' data-template-name='list/topic-list-item.raw'>
   {{#if bulkSelectEnabled}}
-    <td class="bulk-select">
+    <td class="bulk-select topic-list-data">
       <input type="checkbox" class="bulk-select">
     </td>
   {{/if}}
@@ -46,7 +46,7 @@
     This causes the topic-post-badge to be considered the same word as "text"
     at the end of the link, preventing it from line wrapping onto its own line.
   --}}
-  <span class="main-link">
+  <span class="main-link topic-list-data">
     <span class='link-top-line'>
       {{~raw-plugin-outlet name="topic-list-before-status"}}
       {{~raw "topic-status" topic=topic}}
@@ -78,8 +78,8 @@
       {{raw "list/topic-excerpt" topic=topic}}
     {{/if}}
   </span>
-  <span class="fill"></span>
-  <span class="secondary">
+  <span class="fill topic-list-data"></span>
+  <span class="secondary topic-list-data">
     {{#if showPosters}}
       {{raw "list/posters-column" posters=topic.featuredUsers}}
     {{/if}}
@@ -87,14 +87,14 @@
 </script>
 
 <script type='text/x-handlebars' data-template-name='list/activity-column.raw'>
-  <{{tagName}} class="{{class}} {{cold-age-class topic.createdAt startDate=topic.bumpedAt class=""}} activity post-activity" href="{{topic.lastPostUrl}}" title="{{{topic.bumpedAtTitle}}}">
+  <{{tagName}} class="{{class}} {{cold-age-class topic.createdAt startDate=topic.bumpedAt class=""}} activity post-activity topic-list-data" href="{{topic.lastPostUrl}}" title="{{{topic.bumpedAtTitle}}}">
     {{~raw-plugin-outlet name="topic-list-before-relative-date"~}}
     {{~format-date topic.bumpedAt format="tiny" noTitle="true"~}}
   </{{tagName}}>
 </script>
 
 <script type='text/x-handlebars' data-template-name='list/posts-count-column.raw'>
-  <{{view.tagName}} class='posts-map posts {{view.likesHeat}}' title='{{view.title}}'>
+  <{{view.tagName}} class='posts-map posts {{view.likesHeat}} topic-list-data' title='{{view.title}}'>
     <a href class='num posts-map badge-posts {{view.likesHeat}}'>
       {{d-icon "far-comment"}}
       {{raw-plugin-outlet name="topic-list-before-reply-count"}}
