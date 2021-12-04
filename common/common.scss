@@ -491,7 +491,8 @@ hr {
   background: $bios;
   input,
   .d-editor-textarea-wrapper,
-  .select-kit.combo-box .select-kit-header {
+  .select-kit.combo-box .select-kit-header,
+  .select-kit.multi-select .multi-select-header {
     background: rgba(0,0,0,0.25);
   }
   .mini-tag-chooser {
