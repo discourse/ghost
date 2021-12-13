@@ -47,7 +47,7 @@
         {{#each topics as |t|}}
           <li class="topic-list-item {{if t.archived 'archived'}} {{if t.visited 'visited'}}" data-topic-id={{t.id}}>
             <a href="{{t.lastPostUrl}}" title='{{i18n 'last_post'}}: {{{raw-date t.bumped_at}}}'>{{avatar t.lastPoster imageSize="large"}}</a>
-            <div class='main-link'>
+            <div class='main-link topic-list-data'>
               <div class='link-top-line'>
                 {{topic-status topic=t}}
                 {{topic-link t}}
