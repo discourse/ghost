@@ -1,7 +1,8 @@
 .sidebar-wrapper {
   background-color: var(--secondary);
-  margin-top: 2.5em;
-
+  margin-top: 1.5em;
+  top: calc(var(--header-offset, 0) + 1.5em);
+  height: calc(100vh - (var(--header-offset, 0) + 1.5em));
   .sidebar-section-link-wrapper {
     .sidebar-section-link {
       &:hover {

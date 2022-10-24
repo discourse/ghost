@@ -6,13 +6,14 @@
     padding: 8px;
     margin-top: 0;
   }
-  .section .section-title, .section-title {
+  .section .section-title,
+  .section-title {
     border: 0;
   }
   .navigation {
     border: 0;
     .navigation-item:hover {
-      background-color: rgba(0,0,0,0.25);
+      background-color: rgba(0, 0, 0, 0.25);
     }
   }
 }
@@ -33,11 +34,12 @@
 .category-list {
   li {
     box-sizing: border-box;
-    width: calc(33.33% - (8px/3)*2);
+    width: calc(33.33% - (8px / 3) * 2);
   }
 }
 
-.categories-and-latest, .categories-and-top {
+.categories-and-latest,
+.categories-and-top {
   .category-list {
     li {
       width: auto;
@@ -45,9 +47,10 @@
   }
 }
 
-.category-boxes, .category-boxes-with-topics {
+.category-boxes,
+.category-boxes-with-topics {
   .category-box {
-    width: calc(33.33% - (8px/3)*2);
+    width: calc(33.33% - (8px / 3) * 2);
   }
 }
 
@@ -80,7 +83,7 @@
 
 // base:user
 .user-navigation {
-  background-color: rgba(0,0,0,0.25);
+  background-color: rgba(0, 0, 0, 0.25);
 }
 
 .user-table {
@@ -91,17 +94,18 @@
 }
 
 // base:topic-post
-.topic-post article, .placeholder {
+.topic-post article,
+.placeholder {
   .row {
     display: flex;
     flex-direction: row;
   }
 }
 
-.topic-avatar, .topic-body {
-  background-color: rgba(0,0,0,1);
+.topic-avatar,
+.topic-body {
+  background-color: rgba(0, 0, 0, 1);
   border-top: 0 none;
-  border-bottom: 1px solid $bios;
 }
 
 .topic-avatar {
@@ -116,7 +120,9 @@
 
 .topic-body {
   padding-top: 8px;
-  .topic-meta-data { padding-left: 0; }
+  .topic-meta-data {
+    padding-left: 0;
+  }
   .who-liked {
     width: auto;
     margin-right: 8px;
@@ -157,7 +163,7 @@
 // base:login
 .d-modal.create-account .login-form::before,
 .d-modal.create-account .login-form::after {
-  content:none;
+  content: none;
 }
 
 // plugins:docs
