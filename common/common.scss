@@ -1,3 +1,5 @@
+@use "sass:list";
+
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Overpass+Mono&display=swap");
 
 @import "variables";
@@ -243,7 +245,7 @@
 
 // base:discourse
 body {
-  font: #{$base-font-size}/#{$line-height} $base-font-family;
+  font: list.slash($base-font-size, $line-height) $base-font-family;
   background: $background;
 }
 
