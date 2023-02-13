@@ -47,13 +47,6 @@
   }
 }
 
-.category-boxes,
-.category-boxes-with-topics {
-  .category-box {
-    width: calc(33.33% - (8px / 3) * 2);
-  }
-}
-
 // base:compose
 .fullscreen-composer #reply-control {
   &.fullscreen {
