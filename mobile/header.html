@@ -1,4 +1,7 @@
-<script type='text/x-handlebars' data-template-name='mobile/list/topic-list-item.raw'>
+<script
+  type="text/x-handlebars"
+  data-template-name="mobile/list/topic-list-item.raw"
+>
   {{~#unless expandPinned}}
   <a href="{{topic.lastPostUrl}}" data-user-card="{{topic.last_poster_username}}">{{avatar topic.lastPosterUser imageSize="large"}}</a>
   {{/unless~}}
@@ -32,64 +35,10 @@
   </div>
 </script>
 
-<script type='text/x-handlebars' data-template-name='mobile/components/basic-topic-list'>
-  {{#conditional-loading-spinner condition=loading}}
-    {{#if hasIncoming}}
-    <div class="show-mores">
-      <div class='alert alert-info clickable' {{action showInserted}}>
-        {{count-i18n key="topic_count_" suffix="latest" count=incomingCount}}
-      </div>
-    </div>
-    {{/if}}
-
-    {{#if topics}}
-      <ul class="topic-list">
-        {{#each topics as |t|}}
-          <li class="topic-list-item {{if t.archived 'archived'}} {{if t.visited 'visited'}}" data-topic-id={{t.id}}>
-            <a href="{{t.lastPostUrl}}" title='{{i18n 'last_post'}}: {{{raw-date t.bumped_at}}}'>{{avatar t.lastPoster imageSize="large"}}</a>
-            <div class='main-link topic-list-data'>
-              <div class='link-top-line'>
-                {{topic-status topic=t}}
-                {{topic-link t}}
-                {{#if t.unseen}}
-                  <span class="badge-notification new-topic"></span>
-                {{/if}}
-                {{#if t.hasExcerpt}}
-                  <div class="topic-excerpt">
-                    {{{t.excerpt}}}
-                    {{#if t.excerptTruncated}}
-                      {{#unless t.canClearPin}}<a href="{{unbound t.url}}">{{i18n 'read_more'}}</a>{{/unless}}
-                    {{/if}}
-                    {{#if t.canClearPin}}
-                      <a href {{action "clearPin" t}} title="{{i18n 'topic.clear_pin.help'}}">{{i18n 'topic.clear_pin.title'}}</a>
-                    {{/if}}
-                  </div>
-                {{/if}}
-              </div>
-              <div class="link-bottom-line topic-item-stats clearfix">
-                {{#unless hideCategory}}
-                  <div class='category'>
-                    {{category-link t.category}}
-                  </div>
-                {{/unless}}
-                {{raw "list/activity-column" topic=t tagName="div" class="num activity last"}}
-                <!--a href="{{t.lastPostUrl}}" title='{{i18n 'last_post'}}: {{{raw-date t.bumped_at}}}'>{{t.last_poster_username}}</a-->
-                {{raw "list/post-count-or-badges" topic=t postBadgesEnabled="true"}}
-                {{discourse-tags t mode="list" tagsForUser=tagsForUser}}
-              </div>
-            </div>
-          </li>
-        {{/each}}
-      </ul>
-    {{else}}
-      <div class='alert alert-info'>
-        {{i18n 'choose_topic.none_found'}}
-      </div>
-    {{/if}}
-  {{/conditional-loading-spinner}}
-</script>
-
-<script type='text/x-handlebars' data-template-name='mobile/components/categories-only'>
+<script
+  type="text/x-handlebars"
+  data-template-name="mobile/components/categories-only"
+>
   {{#if categories}}
     <ul class="category-list {{if showTopics 'with-topics'}}">
       {{#each categories as |c|}}
@@ -134,7 +83,10 @@
   {{/if}}
 </script>
 
-<script type='text/x-handlebars' data-template-name='components/mobile-category-topic'>
+<script
+  type="text/x-handlebars"
+  data-template-name="components/mobile-category-topic"
+>
   <div class='main-link'>
     <div class='topic-inset'>
       {{raw "topic-status" topic=topic}}
