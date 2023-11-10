@@ -760,6 +760,7 @@ div.menu-links-header .menu-links-row {
   box-shadow: none;
 }
 
+.d-modal__container,
 .modal-inner-container {
   background: $cyberpunk-low;
   box-shadow: none;
@@ -768,13 +769,15 @@ div.menu-links-header .menu-links-row {
 }
 
 .inline-modal {
-  .modal-inner-container {
+  .d-modal__container .modal-inner-container {
     border: 0;
   }
 }
 
 .modal-header,
-.modal-footer {
+.d-modal__header,
+.modal-footer,
+.d-modal__footer {
   border: 0;
 }
 
