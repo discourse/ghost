@@ -1,30 +1,43 @@
 .sidebar-wrapper {
-  background-color: var(--secondary);
-  margin-top: 1.5em;
+  background: $cyberpunk;
+  margin: 1.5em 0 1.5em 1.5em;
+
   top: calc(var(--header-offset, 0) + 1.5em);
-  height: calc(100vh - (var(--header-offset, 0) + 1.5em));
+  height: calc(100vh - (var(--header-offset, 0) + 3em));
   .sidebar-section-link-wrapper {
     .sidebar-section-link {
       &:hover {
-        background-color: rgba(33, 36, 36, 1);
-        animation-name: fade-in-rgba;
+        background: $cyberpunk;
         animation-iteration-count: 1;
         animation-timing-function: ease-in;
         animation-duration: 100ms;
       }
+      &.active {
+        background: $cyberpunk;
+      }
+    }
+
+    .btn-flat:focus {
+      background: $cyberpunk;
     }
   }
 
   .sidebar-footer-wrapper {
-    background: var(--secondary);
+    background: $cyberpunk;
     .sidebar-footer-container {
       background: none;
       &:before {
-        background: linear-gradient(
-          to bottom,
-          transparent,
-          rgba(var(--secondary-rgb), 1)
-        );
+        display: none;
+      }
+    }
+
+    .sidebar-footer-actions .btn {
+      padding: 0.25em !important;
+      margin-left: 0.5em;
+      font-size: var(--font-0);
+      border: none;
+      .d-icon {
+        color: var(--primary-medium);
       }
     }
   }
@@ -36,9 +49,9 @@
   }
   &:hover {
     color: rgb(255, 255, 255);
-    background-color: var(--tertiary);
+
     border-radius: 4px;
-    box-shadow: 0 0 25px -3px var(--tertiary);
+    background: $cyberpunk;
 
     .sidebar-section-header-button .d-icon {
       color: var(--primary);
