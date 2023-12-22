@@ -719,6 +719,13 @@ table.group-members {
   }
 }
 
+.user-menu.revamped .tabs-list .btn {
+  &:hover,
+  &.active {
+    background: var(--tertiary-low);
+  }
+}
+
 .user-menu .quick-access-panel {
   border-color: var(--tertiary);
 }
@@ -825,6 +832,13 @@ aside.onebox {
       }
     }
   }
+}
+
+.search-menu .search-link:focus,
+.search-menu .search-link:hover,
+.search-menu-container .search-link:focus,
+.search-menu-container .search-link:hover {
+  background: var(--tertiary-medium);
 }
 
 // base:search
@@ -1114,8 +1128,11 @@ aside.quote .title {
     &::before {
       margin-right: 4px;
       border-radius: 0;
-      box-shadow: 2px 0 25px var(--tertiary), 0 2px 25px var(--tertiary),
-        -2px 0 25px var(--tertiary), 0 -2px 25px var(--tertiary);
+      box-shadow:
+        2px 0 25px var(--tertiary),
+        0 2px 25px var(--tertiary),
+        -2px 0 25px var(--tertiary),
+        0 -2px 25px var(--tertiary);
     }
   }
   hr.topic-list-item-separator {
@@ -1906,21 +1923,25 @@ kbd {
   }
   .select-kit-row {
     &.is-highlighted {
-      background: $tertiary-alt;
+      background: var(--tertiary-low);
     }
     &.is-selected {
       color: var(--secondary);
       background: var(--highlight);
     }
     &.is-selected.is-highlighted {
-      background: $tertiary-alt;
+      background: var(--tertiary-low);
       color: var(--primary);
     }
   }
   .select-kit-collection:hover .select-kit-row.is-highlighted:hover {
-    background: $tertiary-alt;
+    background: var(--tertiary-low);
     color: var(--primary);
   }
+}
+
+.select-kit .select-kit-row.is-selected {
+  background: var(--tertiary-low);
 }
 
 // select-kit:topic-notifications-button
@@ -1965,6 +1986,25 @@ kbd {
       }
     }
   }
+}
+
+// chat
+
+.full-page-chat {
+  margin-top: 1.5em;
+  margin-left: 2em;
+}
+
+.chat-channel {
+  background: var(--secondary);
+  height: calc(100vh - (var(--header-offset) + 5.85em));
+}
+
+.no-touch .chat-message-container:hover,
+.no-touch .chat-transcript:hover,
+.no-touch .chat-message-container.-active,
+.no-touch .-active.chat-transcript {
+  background: var(--tertiary-low);
 }
 
 // plugins:docs
