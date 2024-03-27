@@ -1,11 +1,13 @@
 // admin: admin_base
-.admin-main-nav:before, .admin-controls nav:before {
+.admin-main-nav:before,
+.admin-controls nav:before {
   content: "";
   background: hsla(230, 32%, 26%, 1);
   width: 10px;
 }
 
-.admin-main-nav:after, .admin-controls nav:after {
+.admin-main-nav:after,
+.admin-controls nav:after {
   content: "";
   background: #1a1e32;
   width: 10px;
@@ -119,7 +121,7 @@
 // base:discourse
 .mobile-view .mobile-nav {
   border: 0;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
   .drop.expanded {
     border: 0;
   }
@@ -221,8 +223,7 @@ tr.category-topic-link {
 }
 
 .user-navigation {
-  background-color: rgba(0,0,0,0);
-
+  background-color: rgba(0, 0, 0, 0);
 }
 
 .user-table {
@@ -251,8 +252,8 @@ tr.category-topic-link {
 
 // components:user-stream
 .user-right {
-  >.user-stream {
-    >.alert:first-child {
+  > .user-stream {
+    > .alert:first-child {
       margin-top: 0;
     }
   }
@@ -267,7 +268,8 @@ tr.category-topic-link {
 }
 
 .user-stream {
-  .item, .user-stream-item {
+  .item,
+  .user-stream-item {
     padding: 8px;
   }
 }

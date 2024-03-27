@@ -1128,11 +1128,8 @@ aside.quote .title {
     &::before {
       margin-right: 4px;
       border-radius: 0;
-      box-shadow:
-        2px 0 25px var(--tertiary),
-        0 2px 25px var(--tertiary),
-        -2px 0 25px var(--tertiary),
-        0 -2px 25px var(--tertiary);
+      box-shadow: 2px 0 25px var(--tertiary), 0 2px 25px var(--tertiary),
+        -2px 0 25px var(--tertiary), 0 -2px 25px var(--tertiary);
     }
   }
   hr.topic-list-item-separator {
