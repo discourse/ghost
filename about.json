@@ -1,8 +1,8 @@
 {
-  "name": "Ghost",
+  "name": "Ghost Theme",
   "component": false,
   "license_url": "https://github.com/discourse/ghost/blob/main/LICENSE",
-  "about_url": "https://meta.discourse.org/t/ghost-a-cyberpunk-theme-for-discourse/111806?u=melhosseiny",
+  "about_url": "https://meta.discourse.org/t/ghost-a-cyberpunk-theme-for-discourse/111806",
   "authors": "https://github.com/melhosseiny",
   "theme_version": "0.0.3",
   "minimum_discourse_version": null,
