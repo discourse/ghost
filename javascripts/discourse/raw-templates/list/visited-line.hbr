@@ -1,0 +1,3 @@
+{{#if view.isLastVisited}}
+  <hr class='topic-list-item-separator' data-message="{{i18n 'topics.new_messages_marker'}}"></hr>
+{{/if}}

@@ -1,0 +1,48 @@
+{{#if categories}}
+  <ul class="category-list {{if showTopics 'with-topics'}}">
+    {{#each categories as |c|}}
+      <li data-category-id={{c.id}}>
+        <span
+          class="category-color"
+          style="background-color: #{{c.color}}"
+        ></span>
+        <span class="category">
+          {{category-title-link category=c}}
+          {{#if c.description_excerpt}}
+            <span class="category-description">
+              {{{c.description_excerpt}}}
+            </span>
+          {{/if}}
+          {{#if c.subcategories}}
+            <span class="subcategories-list">
+              <span class="subcategories">
+                {{#each c.subcategories as |subcategory|}}
+                  {{category-link subcategory}}
+                {{/each}}
+              </span>
+            </span>
+          {{/if}}
+        </span>
+        <span class="topics">
+          {{#if showTopics}}
+            {{#each c.topics as |t|}}
+              {{mobile-category-topic topic=t}}
+            {{/each}}
+          {{/if}}
+        </span>
+        <footer>
+          <figure title="{{i18n 'all_time_desc'}}">{{number c.topics_all_time}}
+            <figcaption>{{i18n "all_time"}}</figcaption></figure>
+          {{#if c.pickMonth}}
+            <figure title="{{i18n 'month_desc'}}">{{number c.topics_month}}
+              <figcaption>{{i18n "month"}}</figcaption></figure>
+          {{/if}}
+          {{#if c.pickWeek}}
+            <figure title="{{i18n 'week_desc'}}">{{number c.topics_week}}
+              <figcaption>{{i18n "week"}}</figcaption></figure>
+          {{/if}}
+        </footer>
+      </li>
+    {{/each}}
+  </ul>
+{{/if}}
