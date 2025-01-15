@@ -1,45 +1,51 @@
-{{#unless isHidden}}
+{{#unless this.isHidden}}
   {{plugin-outlet
     name="category-list-above-each-category"
     connectorTagName=""
     tagName=""
-    args=(hash category=category)
+    args=(hash category=this.category)
   }}
 
   <li
-    data-category-id={{category.id}}
-    data-notification-level={{category.notificationLevelString}}
-    class="{{if c.description_excerpt 'has-description' 'no-description'}}
-      {{if category.uploaded_logo.url 'has-logo' 'no-logo'}}"
+    data-category-id={{this.category.id}}
+    data-notification-level={{this.category.notificationLevelString}}
+    class="{{if this.c.description_excerpt 'has-description' 'no-description'}}
+      {{if this.category.uploaded_logo.url 'has-logo' 'no-logo'}}"
   >
     <div class="item">
       <span
         class="category-color"
-        style="background-color: #{{category.color}}"
+        style={{html-safe (concat "background-color: " this.category.color)}}
       ></span>
-      <span class="category {{if isMuted 'muted'}}">
-        {{category-title-link category=category}}
-        {{#if category.description_excerpt}}
+      <span class="category {{if this.isMuted 'muted'}}">
+        {{category-title-link category=this.category}}
+        {{#if this.category.description_excerpt}}
           <div class="category-description">
-            {{dir-span category.description_excerpt htmlSafe="true"}}
+            {{dir-span this.category.description_excerpt htmlSafe="true"}}
           </div>
         {{/if}}
-        {{#if category.subcategories}}
+        {{#if this.category.subcategories}}
           <div class="subcategories">
-            {{#each category.subcategories as |subcategory|}}
-              {{sub-category-item category=subcategory listType=listType}}
+            {{#each this.category.subcategories as |subcategory|}}
+              {{sub-category-item category=subcategory listType=this.listType}}
             {{/each}}
           </div>
         {{/if}}
       </span>
       <span class="topics">
-        <div title={{category.statTitle}}>{{{html-safe category.stat}}}</div>
-        {{category-unread category=category tagName="div" class="unread-new"}}
+        <div title={{this.category.statTitle}}>{{html-safe
+            this.category.stat
+          }}</div>
+        {{category-unread
+          category=this.category
+          tagName="div"
+          class="unread-new"
+        }}
       </span>
-      {{#unless isMuted}}
-        {{#if showTopics}}
+      {{#unless this.isMuted}}
+        {{#if this.showTopics}}
           <span class="latest">
-            {{#each category.featuredTopics as |t|}}
+            {{#each this.category.featuredTopics as |t|}}
               {{featured-topic topic=t}}
             {{/each}}
           </span>
