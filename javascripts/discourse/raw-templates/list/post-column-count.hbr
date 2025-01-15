@@ -1,7 +1,0 @@
-<{{view.tagName}} class='posts-map posts {{view.likesHeat}} topic-list-data' title='{{view.title}}'>
-  <a href class='num posts-map badge-posts {{view.likesHeat}}'>
-    {{d-icon "far-comment"}}
-    {{raw-plugin-outlet name="topic-list-before-reply-count"}}
-    {{number topic.replyCount noTitle="true"}}
-  </a>
-</{{view.tagName}}>

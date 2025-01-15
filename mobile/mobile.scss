@@ -155,30 +155,71 @@
   }
 }
 
-// base:topic-list
-.topic-list {
-  margin-left: 0;
-  .topic-list-item {
-    align-items: start;
-    padding: 8px;
-    img.avatar {
-      margin-right: 8px;
-    }
-    .main-link {
-      line-height: 1.5;
-    }
-    .posts-map {
-      font-size: 1em;
-      display: flex;
-    }
-    .num.posts a {
-      font-weight: 400;
-    }
+.topic-list .topic-list-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  padding: 4px 8px;
+
+  .activity,
+  .pull-right {
+    display: none;
   }
-  .topic-excerpt {
-    width: auto;
+
+  .topic-list-data {
+    display: contents;
+  }
+
+  .topic-item-metadata {
+    margin-left: 8px;
+    flex-grow: 1;
+  }
+
+  .pull-left {
+    float: unset;
+  }
+
+  .topic-item-stats {
+    margin-top: 4px;
+  }
+
+  .topic-item-stats__category-tags {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+
+    .discourse-tags .discourse-tag {
+      margin-right: 4px;
+    }
   }
 }
+
+// base:topic-list
+// .topic-list {
+//   margin-left: 0;
+//   .topic-list-item {
+//     align-items: start;
+//     padding: 8px;
+//     img.avatar {
+//       margin-right: 8px;
+//     }
+//     .main-link {
+//       line-height: 1.5;
+//     }
+//     .posts-map {
+//       font-size: 1em;
+//       display: flex;
+//     }
+//     .num.posts a {
+//       font-weight: 400;
+//     }
+//   }
+//   .topic-excerpt {
+//     width: auto;
+//   }
+// }
 
 tr.category-topic-link {
   margin-top: 8px;

@@ -1120,10 +1120,10 @@ aside.quote .title {
 }
 
 .topic-list {
-  display: flex;
-  flex-direction: column;
-  list-style-type: none;
-  padding-left: 0;
+  thead {
+    display: none;
+  }
+
   .badge-notification.new-topic {
     top: -3px;
     padding-left: 0;
@@ -1152,18 +1152,10 @@ aside.quote .title {
     background: $separtor-background;
   }
   .topic-list-item {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-left: 0;
     background-color: #000;
-    padding: 4px 8px;
     margin-bottom: 8px;
     border-radius: 0;
     border-bottom: 1px solid $bios;
-    .topic-list-data {
-      padding: 0;
-    }
 
     &:hover {
       background-color: rgba(33, 36, 36, 1);
@@ -1173,48 +1165,34 @@ aside.quote .title {
       animation-duration: 100ms;
     }
 
-    .main-link {
+    .num {
       display: flex;
-      flex-direction: column;
-      .link-top-line {
+      width: auto;
+      align-items: center;
+      margin-right: 8px;
+      a {
+        padding: 0;
       }
-      .link-bottom-line {
+      .d-icon {
+        padding-right: 4px;
+      }
+      &[href] {
         color: #5f6368;
-        line-height: 1;
-        .num {
-          display: flex;
-          width: auto;
-          margin-right: 8px;
-          a {
-            padding: 0;
-          }
-          .d-icon {
-            padding-right: 4px;
-          }
-          &[href] {
-            color: #5f6368;
-          }
-        }
-        .views {
-          width: auto;
-          margin-right: 8px;
-        }
-        .discourse-tag {
-          margin-right: 4px;
-        }
-        .discourse-tag.simple {
-          color: #5f6368;
-        }
-        .discourse-tag:before {
-          content: "#";
-          color: #c4c7ca;
-        }
       }
     }
-    .fill {
-      flex: 1;
+    .ghost-views {
+      width: auto;
+      margin-right: 8px;
     }
-    .secondary {
+    .discourse-tag {
+      margin-right: 4px;
+    }
+    .discourse-tag.simple {
+      color: #5f6368;
+    }
+    .discourse-tag:before {
+      content: "#";
+      color: #c4c7ca;
     }
   }
 }
