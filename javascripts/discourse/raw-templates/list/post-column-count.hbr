@@ -1,3 +1,4 @@
+{{!-- has-modern-replacement --}}
 <{{view.tagName}} class='posts-map posts {{view.likesHeat}} topic-list-data' title='{{view.title}}'>
   <a href class='num posts-map badge-posts {{view.likesHeat}}'>
     {{d-icon "far-comment"}}

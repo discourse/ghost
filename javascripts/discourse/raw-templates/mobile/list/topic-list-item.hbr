@@ -1,3 +1,4 @@
+{{!-- has-modern-replacement --}}
 {{~#unless expandPinned}}
   <a href="{{topic.lastPostUrl}}" data-user-card="{{topic.last_poster_username}}">{{avatar topic.lastPosterUser imageSize="large"}}</a>
 {{/unless~}}
