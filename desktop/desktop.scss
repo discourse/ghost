@@ -1,6 +1,6 @@
 @import "variables";
 
-.topic-list {
+.topic-list:not(.ghost-legacy-topic-list) {
   .topic-list-item {
     display: flex;
     flex-direction: row;

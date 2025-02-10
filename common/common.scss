@@ -1120,6 +1120,13 @@ aside.quote .title {
 }
 
 .topic-list {
+  &.ghost-legacy-topic-list {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    padding-left: 0;
+  }
+
   thead {
     display: none;
   }
@@ -1151,6 +1158,17 @@ aside.quote .title {
     padding: 0 0.25em;
     background: $separtor-background;
   }
+  &.ghost-legacy-topic-list .topic-list-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 0;
+    padding: 4px 8px;
+
+    .topic-list-data {
+      padding: 0;
+    }
+  }
   .topic-list-item {
     background-color: #000;
     margin-bottom: 8px;
@@ -1164,7 +1182,52 @@ aside.quote .title {
       animation-timing-function: ease-in;
       animation-duration: 100ms;
     }
+  }
 
+  &.ghost-legacy-topic-list .topic-list-item {
+    .main-link {
+      display: flex;
+      flex-direction: column;
+
+      .link-bottom-line {
+        color: #5f6368;
+        line-height: 1;
+        .num {
+          display: flex;
+          width: auto;
+          margin-right: 8px;
+          a {
+            padding: 0;
+          }
+          .d-icon {
+            padding-right: 4px;
+          }
+          &[href] {
+            color: #5f6368;
+          }
+        }
+        .views {
+          width: auto;
+          margin-right: 8px;
+        }
+        .discourse-tag {
+          margin-right: 4px;
+        }
+        .discourse-tag.simple {
+          color: #5f6368;
+        }
+        .discourse-tag:before {
+          content: "#";
+          color: #c4c7ca;
+        }
+      }
+    }
+    .fill {
+      flex: 1;
+    }
+  }
+
+  &:not(.ghost-legacy-topic-list) .topic-list-item {
     .num {
       display: flex;
       width: auto;
