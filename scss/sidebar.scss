@@ -69,3 +69,22 @@
   .sidebar-section-header-button:hover {
   background: none;
 }
+
+.sidebar-section-wrapper {
+  border-image: linear-gradient(
+      rgba(255, 25, 223, 0.25),
+      rgba(0, 208, 193, 0.25)
+    )
+    1;
+}
+
+.sidebar-wrapper
+  .sidebar-section-link-wrapper
+  .dropdown-menu
+  .sidebar-section-link:hover {
+  background: var(--primary);
+  color: var(--secondary);
+  .d-icon {
+    color: var(--secondary);
+  }
+}

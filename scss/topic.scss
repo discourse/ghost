@@ -1,0 +1,64 @@
+.timeline-container .topic-timeline {
+  padding-right: 0.5em;
+  .timeline-scrollarea {
+    border-left: none;
+    border-right: 1px solid var(--tertiary-low-or-tertiary-high);
+  }
+  .timeline-scroller {
+    flex-direction: row-reverse;
+    margin-left: 0;
+    margin-right: -0.22em;
+  }
+  .timeline-date-wrapper {
+    text-align: right;
+    max-width: unset;
+  }
+  .timeline-scroller-content {
+    padding-left: 0;
+    padding-right: 1em;
+  }
+  .timeline-replies,
+  .timeline-controls {
+    text-align: right;
+  }
+  .timeline-footer-controls {
+    width: 100%;
+    align-items: end;
+    flex-direction: column-reverse;
+  }
+}
+
+.container.posts .topic-map {
+  max-width: 100%;
+  border-color: $bios;
+  padding-inline: 0.75em;
+  font-family: "Overpass Mono";
+  font-size: var(--font-down-1);
+  &.--op {
+    border-bottom: 1px solid $bios;
+    border-top: none;
+    margin-bottom: -8px;
+  }
+  &.--bottom {
+    margin-top: -8px;
+  }
+  .topic-map__stat-label {
+    color: var(--primary);
+  }
+}
+
+.post-notice {
+  padding-left: 1.25em;
+  max-width: unset;
+  background: var(--secondary);
+  opacity: 0.5;
+  border: none;
+  &.old {
+    background: var(--secondary);
+  }
+}
+
+.topic-meta-data .post-info a {
+  color: var(--primary-800);
+  font-family: "Overpass Mono";
+}

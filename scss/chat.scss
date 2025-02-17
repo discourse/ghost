@@ -1,0 +1,62 @@
+// chat
+
+.full-page-chat {
+  margin-top: 1.5em;
+  margin-left: 2em;
+}
+
+.chat-channel {
+  background: $cyberpunk;
+  height: calc(100vh - (var(--header-offset) + 5.85em));
+}
+
+.chat-message-container {
+  background: transparent;
+}
+
+.chat-composer__inner-container {
+  background: rgba(0, 0, 0, 0.8);
+  border: none;
+}
+
+.c-navbar-container {
+  background: $cyberpunk;
+  border: none;
+}
+
+.chat-message-separator-date
+  + .chat-message-separator__line-container
+  .chat-message-separator__line {
+  border-image: linear-gradient(
+      rgba(255, 25, 223, 0.25),
+      rgba(0, 208, 193, 0.25)
+    )
+    1;
+}
+
+.chat-message-separator-date .chat-message-separator__text {
+  background: linear-gradient(
+    120deg,
+    rgba(255, 25, 223, 0.25),
+    rgba(0, 208, 193, 0.25)
+  );
+  border: none;
+  font-family: "Overpass Mono";
+  font-size: var(--font-down-3);
+  color: var(--primary);
+  .discourse-no-touch & {
+    &:hover {
+      background: $bios;
+      color: var(--primary);
+      border: none;
+      box-shadow: 0 0 25px -3px $bios;
+    }
+  }
+}
+
+.no-touch .chat-message-container:hover,
+.no-touch .chat-transcript:hover,
+.no-touch .chat-message-container.-active,
+.no-touch .-active.chat-transcript {
+  background: $cyberpunk;
+}

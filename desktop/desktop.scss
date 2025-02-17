@@ -17,7 +17,6 @@
     flex-direction: column;
 
     .link-bottom-line {
-      color: #5f6368;
       line-height: var(--line-height-large);
       align-items: center;
     }
@@ -124,18 +123,6 @@
   }
 }
 
-.topic-avatar,
-.topic-body {
-  background-color: rgba(0, 0, 0, 1);
-  border-top: 0 none;
-}
-
-.topic-avatar {
-  padding-top: 8px;
-  padding-left: 8px;
-  padding-right: 8px;
-}
-
 .topic-post.sticky-avatar .topic-avatar {
   margin-bottom: 0;
 }
@@ -151,9 +138,6 @@
   }
 }
 
-.topic-map {
-  margin-right: 8px;
-}
 
 .topic-avatar {
   .avatar-flair {
