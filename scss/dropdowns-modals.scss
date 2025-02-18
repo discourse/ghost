@@ -97,3 +97,42 @@
 .search-menu-container .search-link:hover {
   background: var(--primary);
 }
+
+.d-modal {
+  .d-modal__header,
+  .d-modal__footer {
+    border: none;
+  }
+
+  .d-modal__body {
+    textarea,
+    input[type="text"],
+    input[type="password"],
+    input[type="datetime"],
+    input[type="datetime-local"],
+    input[type="date"],
+    input[type="month"],
+    input[type="time"],
+    input[type="week"],
+    input[type="number"],
+    input[type="email"],
+    input[type="url"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="color"] {
+      border: 1px solid;
+      font-family: "Overpass Mono";
+    }
+  }
+
+  .d-modal__container {
+    border-color: var(--secondary);
+  }
+
+  .select-kit {
+    border: 1px solid var(--primary);
+    input[type="search"] {
+      border: none;
+    }
+  }
+}

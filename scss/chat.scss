@@ -1,8 +1,5 @@
-// chat
-
 .full-page-chat {
-  margin-top: 1.5em;
-  margin-left: 2em;
+  margin: 1.5em 0 0 2em;
 }
 
 .chat-channel {
@@ -10,8 +7,20 @@
   height: calc(100vh - (var(--header-offset) + 5.85em));
 }
 
+.chat-drawer .chat-drawer-container {
+  background: $background;
+  background: {
+    size: 100vw;
+    position: left;
+  }
+}
+
 .chat-message-container {
   background: transparent;
+  .no-touch &:hover,
+  &.-active {
+    background: $cyberpunk;
+  }
 }
 
 .chat-composer__inner-container {
@@ -19,44 +28,53 @@
   border: none;
 }
 
-.c-navbar-container {
+.c-navbar-container,
+.chat-side-panel,
+.chat-message-thread-indicator,
+.c-list,
+.sidebar-section-link-wrapper .sidebar-section-link--active {
   background: $cyberpunk;
   border: none;
 }
 
-.chat-message-separator-date
-  + .chat-message-separator__line-container
-  .chat-message-separator__line {
-  border-image: linear-gradient(
-      rgba(255, 25, 223, 0.25),
-      rgba(0, 208, 193, 0.25)
-    )
-    1;
+.chat-side-panel {
+  margin-bottom: 1.5em;
 }
 
-.chat-message-separator-date .chat-message-separator__text {
-  background: linear-gradient(
-    120deg,
-    rgba(255, 25, 223, 0.25),
-    rgba(0, 208, 193, 0.25)
-  );
-  border: none;
-  font-family: "Overpass Mono";
-  font-size: var(--font-down-3);
-  color: var(--primary);
-  .discourse-no-touch & {
-    &:hover {
-      background: $bios;
-      color: var(--primary);
-      border: none;
-      box-shadow: 0 0 25px -3px $bios;
+.chat-message-separator-date {
+  + .chat-message-separator__line-container .chat-message-separator__line {
+    border-image: linear-gradient(
+        120deg,
+        rgba(255, 25, 223, 0.25),
+        rgba(0, 208, 193, 0.25)
+      )
+      1;
+  }
+
+  .chat-message-separator__text {
+    background: linear-gradient(
+      120deg,
+      rgba(255, 25, 223, 0.25),
+      rgba(0, 208, 193, 0.25)
+    );
+    border: none;
+    font-family: "Overpass Mono";
+    font-size: var(--font-down-3);
+    color: var(--primary);
+
+    .discourse-no-touch & {
+      &:hover {
+        background: $bios;
+        color: var(--primary);
+        box-shadow: 0 0 25px -3px $bios;
+      }
     }
   }
 }
 
-.no-touch .chat-message-container:hover,
-.no-touch .chat-transcript:hover,
-.no-touch .chat-message-container.-active,
-.no-touch .-active.chat-transcript {
-  background: $cyberpunk;
+.chat-thread {
+  height: calc(
+    var(--composer-vh, 1vh) * 100 - var(--main-outlet-offset, 0px) - 1px -
+      var(--chat-header-expanded-offset, 0) - var(--composer-height, 0px) - 3em
+  );
 }
