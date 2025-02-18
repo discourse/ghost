@@ -32,35 +32,37 @@ img.avatar {
   border-radius: 0;
 }
 
-textarea,
-input[type="text"],
-input[type="password"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="date"],
-input[type="month"],
-input[type="time"],
-input[type="week"],
-input[type="number"],
-input[type="email"],
-input[type="url"],
-input[type="search"],
-input[type="tel"],
-input[type="color"] {
-  border: 0;
-  font-family: "Overpass Mono";
+html:not(.admin-area) {
+  textarea,
+  input[type="text"],
+  input[type="password"],
+  input[type="datetime"],
+  input[type="datetime-local"],
+  input[type="date"],
+  input[type="month"],
+  input[type="time"],
+  input[type="week"],
+  input[type="number"],
+  input[type="email"],
+  input[type="url"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="color"] {
+    border: 0;
+    font-family: "Overpass Mono";
+  }
+
+  .d-editor-textarea-wrapper,
+  div.ac-wrap,
+  .select-kit.combo-box .select-kit-header,
+  .select-kit.multi-select .multi-select-header {
+    border: 0;
+  }
 }
 
 textarea[disabled] {
   background-color: var(--secondary);
   opacity: 0.4;
-}
-
-.d-editor-textarea-wrapper,
-div.ac-wrap,
-.select-kit.combo-box .select-kit-header,
-.select-kit.multi-select .multi-select-header {
-  border: 0;
 }
 
 table {
@@ -951,4 +953,8 @@ div.edit-category .edit-category-title-bar {
 
 .admin-content .admin-contents {
   padding: 1em;
+}
+
+.admin-area .sidebar-wrapper .admin-panel {
+  background: transparent;
 }
