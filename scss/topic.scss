@@ -1,3 +1,18 @@
+// base:topic-post
+
+h1,
+:not(#list-area .top-lists) h2,
+h3,
+h4,
+h5,
+.extra-info-wrapper .topic-link {
+  font-family: "Overpass Mono";
+}
+
+div.education {
+  color: rgba(255, 255, 255, 0.8);
+}
+
 blockquote {
   border: 0;
   background-color: rgba(0, 0, 0, 0.25);
@@ -328,4 +343,15 @@ nav.post-controls .show-replies[aria-expanded="true"] {
 
 .small-action.topic-post-visited .topic-post-visited-line {
   width: 100%;
+}
+
+.topic-list .topic-list-item-separator .topic-list-data {
+  border-color: var(--tertiary);
+}
+
+.topic-list .topic-list-item-separator .topic-list-data span {
+  background: var(--tertiary);
+  color: var(--primary);
+  border-radius: 2px;
+  box-shadow: 0 0 25px -3px var(--tertiary);
 }

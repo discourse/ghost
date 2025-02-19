@@ -18,7 +18,6 @@
     padding: 0;
     border: 0;
     height: 1px;
-    background-image: $separator;
     text-align: center;
   }
   hr.topic-list-item-separator:after {
@@ -50,4 +49,10 @@
       margin-right: 8px;
     }
   }
+}
+
+.ghost-views,
+.ghost-activity,
+.ghost-replies {
+  font-size: var(--font-down-1);
 }

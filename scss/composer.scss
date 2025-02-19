@@ -20,12 +20,6 @@
   .wmd-controls {
     .btn {
       border-radius: 0;
-      .d-icon {
-        color: var(--primary);
-      }
-      .discourse-no-touch &:hover {
-        box-shadow: none;
-      }
     }
   }
   &.draft,
@@ -119,9 +113,12 @@
       color: var(--primary);
     }
     .discourse-no-touch & {
-      &:hover,
-      &.btn-hover {
-        box-shadow: none;
+      &:focus-visible,
+      &:hover {
+        background: transparent;
+        .d-icon {
+          color: var(--tertiary);
+        }
       }
     }
   }

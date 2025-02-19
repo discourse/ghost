@@ -10,7 +10,7 @@
     padding: 0;
   }
   .main-link {
-    padding: 4px 8px;
+    padding: 0.25em 0.5em;
 
     flex-grow: 1;
     display: flex;
@@ -24,7 +24,7 @@
   .posters {
     flex-grow: 0;
     width: auto;
-    margin-right: 8px;
+    margin-right: 0.5em;
   }
 }
 
@@ -37,6 +37,9 @@
   li {
     box-sizing: border-box;
     width: calc(33.33% - (8px / 3) * 2);
+  }
+  .topics {
+    display: none;
   }
 }
 
