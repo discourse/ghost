@@ -13,11 +13,13 @@
     flex-direction: column;
   }
   &.with-topics {
-    tr {
-      display: flex;
-      margin-bottom: 1em;
-      background: $cyberpunk;
-      gap: 2em;
+    .desktop-view & {
+      tr {
+        display: flex;
+        margin-bottom: 1em;
+        background: $cyberpunk;
+        gap: 2em;
+      }
     }
 
     .category {

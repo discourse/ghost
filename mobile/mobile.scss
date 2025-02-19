@@ -235,3 +235,9 @@ tr.category-topic-link {
   --d-sidebar-active-background: var(--d-hover);
   --d-sidebar-active-color: var(--secondary);
 }
+
+.topic-list .topic-list-item-separator {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
