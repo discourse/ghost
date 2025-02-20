@@ -1,0 +1,80 @@
+.full-page-chat {
+  margin: 1.5em 0 0 2em;
+}
+
+.chat-channel {
+  background: $cyberpunk;
+  height: calc(100vh - (var(--header-offset) + 5.85em));
+}
+
+.chat-drawer .chat-drawer-container {
+  background: $background;
+  background: {
+    size: 100vw;
+    position: left;
+  }
+}
+
+.chat-message-container {
+  background: transparent;
+  .no-touch &:hover,
+  &.-active {
+    background: $cyberpunk;
+  }
+}
+
+.chat-composer__inner-container {
+  background: rgba(0, 0, 0, 0.8);
+  border: none;
+}
+
+.c-navbar-container,
+.chat-side-panel,
+.chat-message-thread-indicator,
+.c-list,
+.sidebar-section-link-wrapper .sidebar-section-link--active {
+  background: $cyberpunk;
+  border: none;
+}
+
+.chat-side-panel {
+  margin-bottom: 1.5em;
+}
+
+.chat-message-separator-date {
+  + .chat-message-separator__line-container .chat-message-separator__line {
+    border-image: linear-gradient(
+        120deg,
+        rgba(255, 25, 223, 0.25),
+        rgba(0, 208, 193, 0.25)
+      )
+      1;
+  }
+
+  .chat-message-separator__text {
+    background: linear-gradient(
+      120deg,
+      rgba(255, 25, 223, 0.25),
+      rgba(0, 208, 193, 0.25)
+    );
+    border: none;
+    font-family: "Overpass Mono";
+    font-size: var(--font-down-3);
+    color: var(--primary);
+
+    .discourse-no-touch & {
+      &:hover {
+        background: $bios;
+        color: var(--primary);
+        box-shadow: 0 0 25px -3px $bios;
+      }
+    }
+  }
+}
+
+.chat-thread {
+  height: calc(
+    var(--composer-vh, 1vh) * 100 - var(--main-outlet-offset, 0px) - 1px -
+      var(--chat-header-expanded-offset, 0) - var(--composer-height, 0px) - 3em
+  );
+}

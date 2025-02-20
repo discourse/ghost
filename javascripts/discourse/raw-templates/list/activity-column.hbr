@@ -1,5 +1,0 @@
-{{!-- has-modern-replacement --}}
-<{{tagName}} class="{{class}} {{cold-age-class topic.createdAt startDate=topic.bumpedAt class=""}} activity post-activity topic-list-data" href="{{topic.lastPostUrl}}" title="{{{topic.bumpedAtTitle}}}">
-  {{~raw-plugin-outlet name="topic-list-before-relative-date"~}}
-  {{~format-date topic.bumpedAt format="tiny" noTitle="true"~}}
-</{{tagName}}>

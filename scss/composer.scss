@@ -1,0 +1,125 @@
+// base:compose
+#reply-control {
+  background-image: linear-gradient(
+    to left,
+    #1a1e32 25%,
+    hsl(231, 31%, 20%) 25%,
+    hsl(231, 31%, 20%) 40%,
+    hsl(230, 32%, 22%) 40%,
+    hsl(230, 32%, 22%) 50%,
+    hsl(230, 32%, 24%) 40%,
+    hsl(230, 32%, 24%) 75%,
+    hsl(230, 32%, 26%) 75%
+  );
+  background-size: 100vw;
+
+  .reply-area {
+    background: $cyberpunk;
+  }
+
+  .wmd-controls {
+    .btn {
+      border-radius: 0;
+    }
+  }
+  &.draft,
+  &.saving {
+    color: var(--primary);
+    .composer-controls {
+      .d-icon {
+        color: var(--primary);
+      }
+    }
+  }
+  .reply-to {
+    .d-icon {
+      color: var(--primary);
+    }
+    .composer-action-title {
+      .action-title {
+        color: var(--primary);
+      }
+    }
+  }
+}
+
+.fullscreen-composer #reply-control.fullscreen {
+  .reply-to,
+  &.show-preview .d-editor-textarea-wrapper {
+    border-color: transparent;
+  }
+}
+
+.autocomplete {
+  border: 0;
+  ul li {
+    border: 0;
+    a {
+      span.name {
+        color: rgba(255, 255, 255, 0.8);
+      }
+      &.selected {
+        background-color: var(--tertiary);
+      }
+    }
+  }
+}
+
+.discourse-no-touch {
+  .autocomplete {
+    ul li {
+      a {
+        &:hover {
+          background-color: var(--highlight);
+          span.username {
+            color: var(--secondary);
+          }
+          span.name {
+            color: rgba(0, 0, 0, 0.5);
+          }
+        }
+      }
+    }
+  }
+}
+
+.d-editor .d-editor-modal {
+  background: $cyberpunk;
+  border: 1px solid $highlight-alt;
+  border-radius: 3px;
+}
+
+.user-preferences .bio-composer,
+.group-form-bio,
+.edit-category-tab-topic-template {
+  padding: 0;
+  border: 0;
+  .d-editor-textarea-wrapper {
+    border: 0;
+  }
+}
+
+.d-editor-textarea-wrapper {
+  border: 0;
+}
+
+.d-editor-button-bar {
+  border-bottom: 0;
+  .btn,
+  .btn-default,
+  .btn.btn-icon {
+    border-radius: 0;
+    .d-icon {
+      color: var(--primary);
+    }
+    .discourse-no-touch & {
+      &:focus-visible,
+      &:hover {
+        background: transparent;
+        .d-icon {
+          color: var(--tertiary);
+        }
+      }
+    }
+  }
+}
