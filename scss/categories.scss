@@ -6,12 +6,14 @@
   list-style-type: none;
   padding-left: 0;
   margin-left: 0;
+
   .category,
   .topics,
   .latest {
     display: flex;
     flex-direction: column;
   }
+
   &.with-topics {
     .desktop-view & {
       tr {
@@ -36,15 +38,19 @@
       color: var(--primary-800);
     }
   }
+
   .topics {
     width: auto;
   }
+
   .featured-topic:first-of-type {
     margin-top: 8px;
   }
+
   .featured-topic:last-of-type {
     margin-bottom: 8px;
   }
+
   li {
     align-items: flex-start;
     position: relative;
@@ -62,6 +68,7 @@
       animation-timing-function: ease-in;
       animation-duration: 100ms;
     }
+
     .category-color {
       display: inline-block;
       position: absolute;
@@ -70,12 +77,15 @@
       width: 8px;
       height: 16px;
     }
+
     .category-text-title {
       justify-content: center;
+
       .d-icon {
         color: var(--tertiary);
       }
     }
+
     &:nth-child(3n) {
       margin-right: 0;
     }
@@ -87,23 +97,28 @@
   .category-list {
     display: table;
     margin-top: 0;
+
     li {
       margin-right: 0;
     }
+
     .topics {
       display: none;
     }
+
     tr {
       display: block;
       border-bottom: 1px solid $bios;
       margin-bottom: 0.5em;
     }
   }
+
   .latest-topic-list,
   .top-topic-list {
     .table-heading {
       display: none;
     }
+
     .latest-topic-list-item {
       background: $cyberpunk;
       border-bottom-color: $bios;
@@ -117,22 +132,27 @@
   .category-box {
     background: $cyberpunk;
     margin: 0 8px 8px 0;
+
     &:nth-child(3n) {
       margin-right: 0;
     }
   }
+
   .category-box-inner {
     padding: 4px 8px;
     border: 0;
   }
+
   h3 {
     font-size: 1.17em;
     color: var(--tertiary);
   }
+
   .description {
     color: var(--primary);
     margin-top: 8px;
   }
+
   .category-box-heading {
     padding: 0;
   }
@@ -141,6 +161,7 @@
 .muted-categories-link {
   border-color: transparent;
   padding: 0;
+
   .muted-categories-heading,
   .d-icon {
     color: var(--primary);

@@ -7,20 +7,26 @@
     top: -3px;
     padding-left: 0;
     color: var(--primary);
+
     &::before {
       margin-right: 4px;
       border-radius: 0;
-      box-shadow: 2px 0 25px var(--tertiary), 0 2px 25px var(--tertiary),
-        -2px 0 25px var(--tertiary), 0 -2px 25px var(--tertiary);
+      box-shadow:
+        2px 0 25px var(--tertiary),
+        0 2px 25px var(--tertiary),
+        -2px 0 25px var(--tertiary),
+        0 -2px 25px var(--tertiary);
     }
   }
+
   hr.topic-list-item-separator {
     padding: 0;
     border: 0;
     height: 1px;
     text-align: center;
   }
-  hr.topic-list-item-separator:after {
+
+  hr.topic-list-item-separator::after {
     content: attr(data-message);
     display: inline-block;
     position: relative;
@@ -28,22 +34,27 @@
     padding: 0 0.25em;
     background: $separtor-background;
   }
+
   .topic-list-item {
     background: $cyberpunk;
     margin-bottom: 8px;
     border-radius: 0;
+
     .num {
       display: flex;
       width: auto;
       align-items: center;
       margin-right: 8px;
+
       a {
         padding: 0;
       }
+
       .d-icon {
         padding-right: 4px;
       }
     }
+
     .ghost-views {
       width: auto;
       margin-right: 8px;

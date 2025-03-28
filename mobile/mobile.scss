@@ -19,6 +19,7 @@
 .mobile-view .mobile-nav {
   border: 0;
   background: rgba(0, 0, 0, 0.5);
+
   .drop.expanded {
     border: 0;
   }
@@ -55,14 +56,15 @@
 .topic-list {
   display: flex;
   min-width: 0;
+
   .topic-list-body {
     min-width: 0;
   }
+
   .topic-list-item {
     display: flex;
     flex-direction: row;
     align-items: center;
-
     padding: 4px 8px;
 
     .activity,
@@ -99,6 +101,7 @@
       }
     }
   }
+
   .main-link {
     width: auto;
   }
@@ -120,6 +123,7 @@ tr.category-topic-link {
 
 .list-controls {
   margin: 0;
+
   .nav-pills {
     margin-left: 0;
   }
@@ -151,6 +155,7 @@ tr.category-topic-link {
 
 .user-main .about {
   background: transparent;
+
   .secondary dl {
     padding: 8px;
   }
@@ -186,15 +191,13 @@ tr.category-topic-link {
 
 // components:user-stream
 .user-right {
+  margin: 8px;
+
   > .user-stream {
     > .alert:first-child {
       margin-top: 0;
     }
   }
-}
-
-.user-right {
-  margin: 8px;
 }
 
 .paginated-topics-list {

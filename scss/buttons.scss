@@ -17,9 +17,11 @@
     background: transparent;
     border: 3px solid transparent;
     border-radius: 4px;
+
     .d-icon {
       color: var(--primary);
     }
+
     .discourse-no-touch & {
       &:hover,
       &.btn-hover {
@@ -27,14 +29,17 @@
         border-color: transparent;
         background-color: rgba(255, 255, 255, 0.25);
         box-shadow: none;
+
         .d-icon {
           color: var(--primary);
         }
       }
     }
+
     &[disabled],
     &.disabled {
       background: transparent;
+
       .d-icon {
         color: var(--primary);
       }
@@ -47,9 +52,11 @@
   background: transparent;
   border: 3px solid transparent;
   border-radius: 4px;
+
   .d-icon {
     color: var(--primary);
   }
+
   .discourse-no-touch & {
     &:hover,
     &.btn-hover {
@@ -57,23 +64,28 @@
       border-color: transparent;
       background-color: rgba(255, 255, 255, 0.25);
       box-shadow: none;
+
       .d-icon {
         color: var(--primary);
       }
     }
   }
+
   &:active,
   &.btn-active {
     background: transparent;
     border-bottom-color: transparent;
   }
+
   &[disabled],
   &.disabled {
     background: transparent;
+
     .d-icon {
       color: var(--primary);
     }
   }
+
   &[href] {
     color: var(--primary);
   }
@@ -89,6 +101,7 @@
   .d-icon {
     color: var(--quaternary);
   }
+
   .discourse-no-touch & {
     &:hover,
     &.btn-hover {
@@ -96,18 +109,22 @@
       border-color: var(--quaternary);
       background-color: var(--quaternary);
       box-shadow: 0 0 25px -3px var(--quaternary);
+
       .d-icon {
         color: var(--primary);
       }
     }
   }
+
   &[disabled],
   &.disabled {
     background: transparent;
+
     .d-icon {
       color: var(--quaternary);
     }
   }
+
   &[href] {
     color: var(--quaternary);
   }
@@ -123,6 +140,7 @@
   .d-icon {
     color: var(--tertiary);
   }
+
   .discourse-no-touch & {
     &:hover,
     &.btn-hover {
@@ -130,19 +148,23 @@
       border-color: var(--tertiary);
       background-color: var(--tertiary);
       box-shadow: 0 0 25px -3px var(--tertiary);
+
       .d-icon {
         color: var(--primary);
       }
     }
   }
+
   &:active,
   &.btn-active {
     background: transparent;
   }
+
   &[disabled],
   &.disabled {
     background: transparent;
   }
+
   &[href] {
     color: var(--tertiary);
   }
@@ -153,9 +175,11 @@
   color: var(--danger);
   border-width: 3px;
   border-color: var(--danger);
+
   .d-icon {
     color: var(--danger);
   }
+
   .discourse-no-touch & {
     &:hover,
     &.btn-hover {
@@ -163,19 +187,23 @@
       border-color: var(--danger);
       background-color: var(--danger);
       box-shadow: 0 0 25px -3px var(--danger);
+
       .d-icon {
         color: var(--secondary);
       }
     }
   }
+
   &:active,
   &.btn-active {
     background: transparent;
   }
+
   &[disabled],
   &.disabled {
     background: transparent;
   }
+
   &[href] {
     color: var(--danger);
   }
@@ -191,6 +219,7 @@
 .horizontal-overflow-nav__scroll-right,
 .horizontal-overflow-nav__scroll-left {
   padding: 0.5em;
+
   .d-icon {
     margin: 0;
   }
