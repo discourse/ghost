@@ -23,7 +23,9 @@
 }
 
 $line-height: 1.5;
-$base-font-family: "Roboto Condensed", "Helvetica Neue", helvetica, arial, sans-serif;
+/* stylelint-disable-next-line scss/dollar-variable-colon-space-after */
+$base-font-family:
+  "Roboto Condensed", "Helvetica Neue", helvetica, arial, sans-serif;
 $heading-font-family: "Overpass Mono", monospace;
 
 // color
@@ -38,7 +40,7 @@ $background: linear-gradient(
   hsla(230deg, 32%, 24%, 1) 75%,
   hsla(230deg, 32%, 26%, 1) 75%
 );
-$separtor-background: linear-gradient(
+$separator-background: linear-gradient(
   to left,
   hsla(230deg, 32%, 22%, 1) 50%,
   hsla(230deg, 32%, 24%, 1) 50%
