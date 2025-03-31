@@ -6,12 +6,13 @@
     flex-direction: row;
     align-items: center;
   }
+
   .topic-list-data {
     padding: 0;
   }
+
   .main-link {
     padding: 0.25em 0.5em;
-
     flex-grow: 1;
     display: flex;
     flex-direction: column;
@@ -21,6 +22,7 @@
       align-items: center;
     }
   }
+
   .posters {
     flex-grow: 0;
     width: auto;
@@ -38,8 +40,17 @@
     box-sizing: border-box;
     width: calc(33.33% - (8px / 3) * 2);
   }
+
   .topics {
     display: none;
+  }
+
+  thead {
+    display: none;
+  }
+
+  .category {
+    background: $cyberpunk;
   }
 }
 
@@ -55,7 +66,7 @@
 // base:compose
 .fullscreen-composer #reply-control {
   &.fullscreen {
-    &:before {
+    &::before {
       background: $bios;
     }
   }
@@ -72,6 +83,7 @@
     .wrapper {
       flex-wrap: wrap;
       justify-content: center;
+
       .group-members-actions + div {
         flex: 100%;
       }
@@ -87,6 +99,7 @@
       rgba(0, 208, 193, 0.25)
     )
     1;
+
   .user-navigation {
     border-image: linear-gradient(
         rgba(255, 25, 223, 0.25),
@@ -102,6 +115,7 @@
 
 .user-main .staff-counters {
   background: $cyberpunk;
+
   > div,
   > div a {
     color: var(--primary);
@@ -130,9 +144,11 @@
 
 .topic-body {
   padding-top: 8px;
+
   .topic-meta-data {
     padding-left: 0;
   }
+
   .who-liked {
     width: auto;
     margin-right: 8px;
@@ -157,6 +173,7 @@
 
 .post-actions {
   margin-right: 8px;
+
   .trigger-user-card {
     margin-right: 4px;
   }
@@ -180,14 +197,4 @@
 
 .latest-topic-list-item .topic-last-activity a {
   color: var(--primary-800);
-}
-
-.category-list thead {
-  display: none;
-}
-
-.category-list {
-  .category {
-    background: $cyberpunk;
-  }
 }

@@ -18,6 +18,7 @@
   .topic-list {
     display: table;
   }
+
   th:hover {
     background-color: var(--highlight-medium);
     color: var(--secondary);
@@ -31,6 +32,7 @@
 
 .docs-browse .docs-items .docs-item:hover {
   color: var(--secondary);
+
   .docs-item-count {
     color: var(--secondary);
   }
@@ -53,6 +55,7 @@
   background: var(--secondary);
   border-color: transparent;
   box-shadow: none;
+
   &:hover {
     box-shadow: none;
     transform: none;

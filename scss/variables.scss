@@ -23,26 +23,27 @@
 }
 
 $line-height: 1.5;
-$base-font-family: "Roboto Condensed", "Helvetica Neue", helvetica, arial,
-  sans-serif;
+/* stylelint-disable-next-line scss/dollar-variable-colon-space-after */
+$base-font-family:
+  "Roboto Condensed", "Helvetica Neue", helvetica, arial, sans-serif;
 $heading-font-family: "Overpass Mono", monospace;
 
 // color
 $background: linear-gradient(
   to left,
   #1a1e32 25%,
-  hsla(231, 31%, 20%, 1) 25%,
-  hsla(231, 31%, 20%, 1) 40%,
-  hsla(230, 32%, 22%, 1) 40%,
-  hsla(230, 32%, 22%, 1) 50%,
-  hsla(230, 32%, 24%, 1) 40%,
-  hsla(230, 32%, 24%, 1) 75%,
-  hsla(230, 32%, 26%, 1) 75%
+  hsla(231deg, 31%, 20%, 1) 25%,
+  hsla(231deg, 31%, 20%, 1) 40%,
+  hsla(230deg, 32%, 22%, 1) 40%,
+  hsla(230deg, 32%, 22%, 1) 50%,
+  hsla(230deg, 32%, 24%, 1) 40%,
+  hsla(230deg, 32%, 24%, 1) 75%,
+  hsla(230deg, 32%, 26%, 1) 75%
 );
-$separtor-background: linear-gradient(
+$separator-background: linear-gradient(
   to left,
-  hsla(230, 32%, 22%, 1) 50%,
-  hsla(230, 32%, 24%, 1) 50%
+  hsla(230deg, 32%, 22%, 1) 50%,
+  hsla(230deg, 32%, 24%, 1) 50%
 );
 $cyberpunk: linear-gradient(
   120deg,

@@ -1,12 +1,11 @@
 // base:topic-post
-
 h1,
 :not(#list-area .top-lists) h2,
 h3,
 h4,
 h5,
 .extra-info-wrapper .topic-link {
-  font-family: "Overpass Mono";
+  font-family: "Overpass Mono", monospace;
 }
 
 div.education {
@@ -36,7 +35,6 @@ aside.quote .title {
 .topic-post article.boxed {
   > .row {
     background: $cyberpunk;
-
     border-bottom: 1px solid $bios;
   }
 }
@@ -53,13 +51,16 @@ aside.quote .title {
 .topic-body {
   width: 100%;
   padding-top: 8px;
+
   .cooked {
     padding-left: 0;
     line-height: 1.6;
   }
+
   .topic-meta-data {
     padding-left: 0;
   }
+
   .who-liked {
     width: auto;
     margin-right: 8px;
@@ -68,20 +69,23 @@ aside.quote .title {
 
 .embedded-posts {
   border-right: 0;
+
   .topic-avatar,
   .topic-body {
     border-bottom: 0;
   }
 
   &.bottom {
-    border-right: 1px solid var(--primary-low);
     margin-right: 1em;
+    border: none;
   }
 
   &.top {
     margin-top: 1em;
-    border-right: 1px solid var(--primary-low);
+    margin-left: 1em;
     margin-right: 1em;
+    border: none;
+    width: 100%;
   }
 }
 
@@ -90,7 +94,7 @@ aside.quote .title {
   padding-left: 1em;
   font-weight: normal;
   text-transform: none;
-  font-family: "Overpass Mono";
+  font-family: "Overpass Mono", monospace;
 }
 
 .small-action {
@@ -99,16 +103,20 @@ aside.quote .title {
   .topic-avatar {
     display: none;
   }
+
   .small-action-desc {
     width: 100%;
     color: var(--primary);
     border-color: $bios;
-    font-family: "Overpass Mono";
+    font-family: "Overpass Mono", monospace;
     padding: 1em;
   }
+
   &.topic-post-visited .topic-post-visited-line {
     border-color: var(--tertiary);
     margin-bottom: calc(1rem + 8px);
+    width: 100%;
+
     .topic-post-visited-message {
       background-color: var(--tertiary);
       color: var(--primary);
@@ -128,6 +136,7 @@ aside.quote .title {
     .d-icon-bookmark {
       color: var(--primary);
     }
+
     .discourse-no-touch & {
       &:hover,
       &.btn-hover {
@@ -142,6 +151,7 @@ aside.quote .title {
 .topic-status-info,
 .topic-timer-info {
   border-top: 0 none;
+
   &:empty {
     display: none;
   }
@@ -162,7 +172,7 @@ aside.quote .title {
 }
 
 .placeholder-animation,
-.placeholder-avatar:before {
+.placeholder-avatar::before {
   background: linear-gradient(
     to right,
     var(--tertiary-very-low) 10%,
@@ -176,6 +186,7 @@ aside.quote .title {
   0% {
     background-color: rgba(0, 0, 0, 1);
   }
+
   100% {
     background-color: rgba(33, 36, 36, 1);
   }
@@ -187,27 +198,33 @@ aside.quote .title {
 
 .timeline-container .topic-timeline {
   padding-right: 0.5em;
+
   .timeline-scrollarea {
     border-left: none;
     border-right: 1px solid var(--tertiary-low-or-tertiary-high);
   }
+
   .timeline-scroller {
     flex-direction: row-reverse;
     margin-left: 0;
     margin-right: -0.22em;
   }
+
   .timeline-date-wrapper {
     text-align: right;
     max-width: unset;
   }
+
   .timeline-scroller-content {
     padding-left: 0;
     padding-right: 1em;
   }
+
   .timeline-replies,
   .timeline-controls {
     text-align: right;
   }
+
   .timeline-footer-controls {
     width: 100%;
     align-items: end;
@@ -218,16 +235,19 @@ aside.quote .title {
 .container.posts .topic-map {
   max-width: 100%;
   border-color: $bios;
-  font-family: "Overpass Mono";
+  font-family: "Overpass Mono", monospace;
   font-size: var(--font-down-1);
+
   &.--op {
     border-bottom: 1px solid $bios;
     border-top: none;
     margin-bottom: -8px;
   }
+
   &.--bottom {
     margin-top: -8px;
   }
+
   .topic-map__stat-label {
     color: var(--primary);
   }
@@ -239,6 +259,7 @@ aside.quote .title {
   background: var(--secondary);
   opacity: 0.5;
   border: none;
+
   &.old {
     background: var(--secondary);
   }
@@ -285,6 +306,7 @@ aside.quote .title {
   button.button-count
   + .toggle-like:hover {
   background: rgba(255, 255, 255, 0.25);
+
   .d-icon {
     color: rgba(255, 255, 255, 0.5);
   }
@@ -299,33 +321,22 @@ aside.quote .title {
   }
 }
 
-.embedded-posts.bottom {
-  border: none;
-}
-
 .embedded-posts .arrow {
   color: var(--tertiary);
 }
 
 .embedded-posts.bottom .collapse-up {
   border: none;
-}
-
-.embedded-posts.top {
-  border: none;
-  margin-left: 1em;
+  background: var(--secondary);
 }
 
 .embedded-posts.top .row .topic-body {
   margin-left: -1em;
   padding-left: 2em;
-  &:before {
+
+  &::before {
     background: $bios;
   }
-}
-
-.embedded-posts.bottom .collapse-up {
-  background: var(--secondary);
 }
 
 nav.post-controls .show-replies[aria-expanded="true"] {
@@ -335,14 +346,6 @@ nav.post-controls .show-replies[aria-expanded="true"] {
 
 .embedded-posts.bottom > div:last-of-type .row::before {
   background: $bios;
-}
-
-.embedded-posts.top {
-  width: 100%;
-}
-
-.small-action.topic-post-visited .topic-post-visited-line {
-  width: 100%;
 }
 
 .topic-list .topic-list-item-separator .topic-list-data {

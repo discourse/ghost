@@ -1,9 +1,9 @@
 .sidebar-wrapper {
   background: $cyberpunk;
   margin: 1.5em 0 1.5em 1.5em;
-
   top: calc(var(--header-offset, 0) + 1.5em);
   height: calc(100vh - (var(--header-offset, 0) + 3em));
+
   .sidebar-section-link-wrapper {
     .sidebar-section-link {
       &:hover {
@@ -12,6 +12,7 @@
         animation-timing-function: ease-in;
         animation-duration: 100ms;
       }
+
       &.active {
         background: $cyberpunk;
       }
@@ -24,9 +25,11 @@
 
   .sidebar-footer-wrapper {
     background: $cyberpunk;
+
     .sidebar-footer-container {
       background: none;
-      &:before {
+
+      &::before {
         display: none;
       }
     }
@@ -36,6 +39,7 @@
       margin-left: 0.5em;
       font-size: var(--font-0);
       border: none;
+
       .d-icon {
         color: var(--primary-medium);
       }
@@ -47,9 +51,9 @@
   .btn:hover {
     background: none;
   }
+
   &:hover {
     color: rgb(255, 255, 255);
-
     border-radius: 4px;
     background: $cyberpunk;
 
@@ -84,6 +88,7 @@
   .sidebar-section-link:hover {
   background: var(--primary);
   color: var(--secondary);
+
   .d-icon {
     color: var(--secondary);
   }

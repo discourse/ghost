@@ -17,6 +17,7 @@
 
 .chat-message-container {
   background: transparent;
+
   .no-touch &:hover,
   &.-active {
     background: $cyberpunk;
@@ -58,7 +59,7 @@
       rgba(0, 208, 193, 0.25)
     );
     border: none;
-    font-family: "Overpass Mono";
+    font-family: "Overpass Mono", monospace;
     font-size: var(--font-down-3);
     color: var(--primary);
 
@@ -74,7 +75,11 @@
 
 .chat-thread {
   height: calc(
-    var(--composer-vh, 1vh) * 100 - var(--main-outlet-offset, 0px) - 1px -
-      var(--chat-header-expanded-offset, 0) - var(--composer-height, 0px) - 3em
+    var(--composer-vh, 1vh) * 100 - var(--main-outlet-offset, 0px) -
+      1px - var(--chat-header-expanded-offset, 0) - var(
+        --composer-height,
+        0px
+      ) -
+      3em
   );
 }
