@@ -94,10 +94,7 @@
 // base:user
 .new-user-wrapper {
   border-top: 1px solid;
-  border-image: linear-gradient(
-      rgb(255, 25, 223, 0.25),
-      rgb(0, 208, 193, 0.25)
-    )
+  border-image: linear-gradient(rgb(255, 25, 223, 0.25), rgb(0, 208, 193, 0.25))
     1;
 
   .user-navigation {
