@@ -62,7 +62,7 @@
 
     a {
       span.name {
-        color: rgba(255, 255, 255, 0.8);
+        color: rgb(255, 255, 255, 0.8);
       }
 
       &.selected {
@@ -84,7 +84,7 @@
           }
 
           span.name {
-            color: rgba(0, 0, 0, 0.5);
+            color: rgb(0, 0, 0, 0.5);
           }
         }
       }

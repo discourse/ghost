@@ -18,7 +18,7 @@
 // base:discourse
 .mobile-view .mobile-nav {
   border: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgb(0, 0, 0, 0.5);
 
   .drop.expanded {
     border: 0;
@@ -26,7 +26,7 @@
 }
 
 // base:group(s)
-@media screen and (max-width: 550px) {
+@media screen and (width <= 550px) {
   .groups-table tr {
     padding: 8px;
   }
@@ -162,7 +162,7 @@ tr.category-topic-link {
 }
 
 .user-navigation {
-  background-color: rgba(0, 0, 0, 0);
+  background-color: rgb(0, 0, 0, 0);
 }
 
 .user-table {
@@ -227,8 +227,8 @@ tr.category-topic-link {
 .category-list-item > footer,
 .subcategory-list-item > footer {
   border-image: linear-gradient(
-      rgba(255, 25, 223, 0.25),
-      rgba(0, 208, 193, 0.25)
+      rgb(255, 25, 223, 0.25),
+      rgb(0, 208, 193, 0.25)
     )
     1;
 }
