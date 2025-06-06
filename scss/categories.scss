@@ -55,14 +55,14 @@
     align-items: flex-start;
     position: relative;
     margin-left: 0;
-    background-color: rgba(0, 0, 0, 1);
+    background-color: rgb(0, 0, 0, 1);
     padding: 4px 8px;
     margin-bottom: 8px;
     margin-right: 8px;
     border-bottom: 1px solid $bios;
 
     &:hover {
-      background-color: rgba(33, 36, 36, 1);
+      background-color: rgb(33, 36, 36, 1);
       animation-name: fade-in-rgba;
       animation-iteration-count: 1;
       animation-timing-function: ease-in;

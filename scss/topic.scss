@@ -9,22 +9,22 @@ h5,
 }
 
 div.education {
-  color: rgba(255, 255, 255, 0.8);
+  color: rgb(255, 255, 255, 0.8);
 }
 
 blockquote {
   border: 0;
-  background-color: rgba(0, 0, 0, 0.25);
+  background-color: rgb(0, 0, 0, 0.25);
 }
 
 aside.quote .title {
   border-left: 0;
-  background-color: rgba(0, 0, 0, 0.25);
+  background-color: rgb(0, 0, 0, 0.25);
 }
 
 .moderator .regular > .cooked {
   background-color: var(--highlight);
-  color: rgba(0, 0, 0, 0.8);
+  color: rgb(0, 0, 0, 0.8);
 }
 
 .topic-post,
@@ -184,11 +184,11 @@ aside.quote .title {
 // base:topic-list
 @keyframes fade-in-rgba {
   0% {
-    background-color: rgba(0, 0, 0, 1);
+    background-color: rgb(0, 0, 0, 1);
   }
 
   100% {
-    background-color: rgba(33, 36, 36, 1);
+    background-color: rgb(33, 36, 36, 1);
   }
 }
 
@@ -289,7 +289,7 @@ aside.quote .title {
   --d-post-control-text-color--hover: var(--primary);
   --d-post-control-icon-color: var(--primary-800);
   --d-post-control-icon-color--hover: var(--primary);
-  --d-post-control-background--hover: rgba(255, 255, 255, 0.25);
+  --d-post-control-background--hover: rgb(255, 255, 255, 0.25);
   --d-post-control-create-text-color: var(--primary-800);
   --d-post-control-create-icon-color: var(--primary);
   --d-post-control-sibling-text-color--hover: var(--primary-medium);
@@ -305,10 +305,10 @@ aside.quote .title {
   .double-button
   button.button-count
   + .toggle-like:hover {
-  background: rgba(255, 255, 255, 0.25);
+  background: rgb(255, 255, 255, 0.25);
 
   .d-icon {
-    color: rgba(255, 255, 255, 0.5);
+    color: rgb(255, 255, 255, 0.5);
   }
 }
 

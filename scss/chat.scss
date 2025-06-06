@@ -25,7 +25,7 @@
 }
 
 .chat-composer__inner-container {
-  background: rgba(0, 0, 0, 0.8);
+  background: rgb(0, 0, 0, 0.8);
   border: none;
 }
 
@@ -46,8 +46,8 @@
   + .chat-message-separator__line-container .chat-message-separator__line {
     border-image: linear-gradient(
         120deg,
-        rgba(255, 25, 223, 0.25),
-        rgba(0, 208, 193, 0.25)
+        rgb(255, 25, 223, 0.25),
+        rgb(0, 208, 193, 0.25)
       )
       1;
   }
@@ -55,8 +55,8 @@
   .chat-message-separator__text {
     background: linear-gradient(
       120deg,
-      rgba(255, 25, 223, 0.25),
-      rgba(0, 208, 193, 0.25)
+      rgb(255, 25, 223, 0.25),
+      rgb(0, 208, 193, 0.25)
     );
     border: none;
     font-family: "Overpass Mono", monospace;

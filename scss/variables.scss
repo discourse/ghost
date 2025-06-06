@@ -32,25 +32,25 @@ $heading-font-family: "Overpass Mono", monospace;
 $background: linear-gradient(
   to left,
   #1a1e32 25%,
-  hsla(231deg, 31%, 20%, 1) 25%,
-  hsla(231deg, 31%, 20%, 1) 40%,
-  hsla(230deg, 32%, 22%, 1) 40%,
-  hsla(230deg, 32%, 22%, 1) 50%,
-  hsla(230deg, 32%, 24%, 1) 40%,
-  hsla(230deg, 32%, 24%, 1) 75%,
-  hsla(230deg, 32%, 26%, 1) 75%
+  hsl(231deg, 31%, 20%, 1) 25%,
+  hsl(231deg, 31%, 20%, 1) 40%,
+  hsl(230deg, 32%, 22%, 1) 40%,
+  hsl(230deg, 32%, 22%, 1) 50%,
+  hsl(230deg, 32%, 24%, 1) 40%,
+  hsl(230deg, 32%, 24%, 1) 75%,
+  hsl(230deg, 32%, 26%, 1) 75%
 );
 $separator-background: linear-gradient(
   to left,
-  hsla(230deg, 32%, 22%, 1) 50%,
-  hsla(230deg, 32%, 24%, 1) 50%
+  hsl(230deg, 32%, 22%, 1) 50%,
+  hsl(230deg, 32%, 24%, 1) 50%
 );
 $cyberpunk: linear-gradient(
   120deg,
-  rgba(255, 25, 223, 0.25),
-  rgba(0, 208, 193, 0.25)
+  rgb(255, 25, 223, 0.25),
+  rgb(0, 208, 193, 0.25)
 );
-$tertiary-alt: rgba(0, 208, 193, 0.8);
-$highlight-alt: rgba(253, 238, 6, 0.25);
+$tertiary-alt: rgb(0, 208, 193, 0.8);
+$highlight-alt: rgb(253, 238, 6, 0.25);
 $bios: #1d3bf0;
-$user-background: rgba(0, 0, 0, 0.5);
+$user-background: rgb(0, 0, 0, 0.5);

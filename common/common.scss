@@ -81,7 +81,7 @@ table {
 
 mark,
 span.highlighted {
-  background-color: rgba(0, 208, 193, 0.25);
+  background-color: rgb(0, 208, 193, 0.25);
 }
 
 // base:alert
@@ -129,8 +129,8 @@ span.highlighted {
 @container (max-width: 47em) {
   .directory-table__row {
     border-image: linear-gradient(
-        rgba(255, 25, 223, 0.25),
-        rgba(0, 208, 193, 0.25)
+        rgb(255, 25, 223, 0.25),
+        rgb(0, 208, 193, 0.25)
       )
       1;
   }
@@ -138,10 +138,7 @@ span.highlighted {
 
 .directory-table__column-header,
 .directory-table__cell {
-  border-image: linear-gradient(
-      rgba(255, 25, 223, 0.25),
-      rgba(0, 208, 193, 0.25)
-    )
+  border-image: linear-gradient(rgb(255, 25, 223, 0.25), rgb(0, 208, 193, 0.25))
     1;
 }
 
@@ -199,7 +196,7 @@ table.group-members {
     .icon {
       &:hover,
       &:focus {
-        background-color: rgba(255, 255, 255, 0.1);
+        background-color: rgb(255, 255, 255, 0.1);
       }
 
       .d-icon {
@@ -219,7 +216,7 @@ table.group-members {
 
 .header-sidebar-toggle button:focus:hover,
 .discourse-no-touch .header-sidebar-toggle button:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgb(255, 255, 255, 0.1);
 
   .d-icon {
     color: var(--primary-medium);
@@ -477,7 +474,7 @@ aside.onebox {
 
   .btn.btn-primary,
   .btn.btn-default {
-    background: rgba(255, 255, 255, 0.25);
+    background: rgb(255, 255, 255, 0.25);
   }
 }
 
@@ -717,7 +714,7 @@ aside.onebox {
 }
 
 .nav-stacked {
-  background-color: rgba(0, 0, 0, 0.25);
+  background-color: rgb(0, 0, 0, 0.25);
 
   li {
     border-bottom: 0;
@@ -729,7 +726,7 @@ aside.onebox {
   }
 
   a:hover {
-    background-color: rgba(0, 0, 0, 0.25);
+    background-color: rgb(0, 0, 0, 0.25);
   }
 
   a.active::after {
@@ -809,7 +806,7 @@ kbd {
 a.mention,
 a.mention-group {
   font-family: "Overpass Mono", monospace;
-  background: rgba(255, 255, 255, 0.25);
+  background: rgb(255, 255, 255, 0.25);
 }
 
 a.mention.--current,
