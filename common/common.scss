@@ -329,7 +329,15 @@ aside.onebox {
   .topic-body .cooked {
     border-radius: 0;
     border-color: transparent;
-    margin-left: -2em;
+  }
+
+  .regular.contents {
+    border: none;
+  }
+
+  .current-user-post .regular.contents {
+    background: none;
+    border: none;
   }
 
   .current-user-post:not(.moderator) .topic-body .cooked {
